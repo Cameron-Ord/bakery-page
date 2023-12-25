@@ -3,6 +3,9 @@
         <section class="hero_section">
             <hero-section></hero-section>
         </section>
+        <section class="about_teaser">
+            <about-teaser></about-teaser>
+        </section>
         <section class="menu_section_breads">
             <breads-header></breads-header>
             <breads-items></breads-items>
@@ -40,21 +43,46 @@ import AboutIngredients from '@/components/AboutIngredients.vue'
 import ContactUs from '@/components/ContactUs.vue'
 import PastriesHeader from '@/components/PastriesHeader.vue'
 import PastriesItems from '@/components/PastriesItems.vue'
+import AboutTeaser from '@/components/AboutTeaser.vue';
 </script>
 
 <style lang="scss" scoped>
+$bg: whitesmoke;
 .page_main{
     display: grid;
     align-items: center;
     min-height: 100vh;
-    >.hero_section{
+
+    >.about_teaser{
         display: grid;
         align-items: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background-color: $bg;
+    }
+    >.hero_section{
+        padding-top: 25px;
+        padding-bottom: 25px;
+        display: grid;
+        align-items: start;
         justify-items: center;
-        background-image: url('/images/tamara-gak-SQLOsc0HGDI-unsplash.jpg');
+        background-image: url('/images/mae-mu-m9pzwmxm2rk-unsplash.jpg');
         background-size:cover;
-        background-position: 25%;
-        height: 100%;
+        background-position: 50% center;
+        min-height: 450px;
+       
+    }
+    >.menu_section_breads{
+        padding-top: 25px;
+        padding-bottom: 25px;
+        display: grid;
+        row-gap: 25px;
+        align-items: center;
+        justify-items: center;
+        background-image: url('/images/pexels-skyler-ewing-10011794.jpg');
+        background-size: cover;
+        background-position: 25% center;
+
     }
 }
 </style>

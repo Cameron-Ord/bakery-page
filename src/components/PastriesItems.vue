@@ -1,23 +1,30 @@
 <template>
     <article class="menu_article">
-        <div class="menu_item">
-            <p>test</p>
-        </div>
-        <div class="menu_item">
-            <p>test</p>
-        </div>
-        <div class="menu_item">
-            <p>test</p>
-        </div>
-        <div class="menu_item">
-            <p>test</p>
-        </div>
-        <div class="menu_item">
-            <p>test</p>
-        </div>
-        <div class="menu_item">
-            <p>test</p>
-        </div>
+        <span class="menu_item">
+            <div class="item_text">
+            </div>
+            <div class="item_image"></div>
+        </span>
+        <span class="menu_item">
+            <div class="item_image"></div>
+            <div class="item_text"></div>
+        </span>
+        <span class="menu_item">
+            <div class="item_text"></div>
+            <div class="item_image"></div>
+        </span>
+        <span class="menu_item">
+            <div class="item_text"></div>
+            <div class="item_image"></div>
+        </span>
+        <span class="menu_item">
+            <div class="item_text"></div>
+            <div class="item_image"></div>
+        </span>
+        <span class="menu_item">
+            <div class="item_text"></div>
+            <div class="item_image"></div>
+        </span>
     </article>
 </template>
 
@@ -25,6 +32,4 @@
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
