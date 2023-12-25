@@ -1,3 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+p{
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    padding: 0px;
+    margin: 0px;
+}
+h1{
+    font-size: clamp(1.35rem, 2vw, 1.45rem);
+    padding: 0px;
+    margin: 0px;
+}
+h2{
+    font-size: clamp(1.25rem, 2vw, 1.40rem);
+    padding: 0px;
+    margin: 0px;
+}
+h3{
+    font-size: clamp(1.2rem, 2vw, 1.3rem);
+    padding: 0px;
+    margin: 0px;
+}
+h4{
+    font-size: clamp(1.15rem, 2vw, 1.25rem);
+    padding: 0px;
+    margin: 0px;
+}
