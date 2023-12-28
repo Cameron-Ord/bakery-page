@@ -5,7 +5,6 @@
         </section>
         <section class="about_teaser">
             <about-teaser></about-teaser>
-            <about-controls></about-controls>
         </section>
         <section class="menu_section_breads">
             <breads-header></breads-header>
@@ -28,7 +27,6 @@ import BreadsHeader from '@/components/BreadsHeader.vue';
 import BreadsItems from '@/components/BreadsItems.vue';
 import SpecialsHeader from '@/components/SpecialsHeader.vue'
 import SpecialsItems from '@/components/SpecialsItems.vue'
-import AboutControls from '@/components/AboutControls.vue';
 import PastriesHeader from '@/components/PastriesHeader.vue'
 import PastriesItems from '@/components/PastriesItems.vue'
 import AboutTeaser from '@/components/AboutTeaser.vue';
@@ -59,7 +57,6 @@ import AboutTeaser from '@/components/AboutTeaser.vue';
         align-items: center;
         padding-top: 25px;
         padding-bottom: 25px;
-        row-gap: 25px;
     }
     >.hero_section{
         padding-top: 25px;
