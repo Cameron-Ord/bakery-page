@@ -1,7 +1,7 @@
 <template>
     <article class="menu_article">
-        <h2>{{ breads[index]['Title'] }}</h2>
-        <p>{{ breads[index]['Desc'] }}</p>
+        <h2 class="breads_title">{{ breads[index]['Title'] }}</h2>
+        <p class="breads_desc">{{ breads[index]['Desc'] }}</p>
         <span class="control_span">
             <img @click="index_dwn" src="/svgs/larrow.svg" alt="">
             <img @click="index_up" src="/svgs/rarrow.svg" alt="">
@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onUpdated, ref } from 'vue';
 const index = ref(0);
 const breads = [
     {
@@ -47,19 +47,58 @@ const index_up = (event: any) =>{
 }
 
 const index_dwn = (event: any) =>{
-    if(event.type === "click"){
-        let index_val = index.value;
-        index_val--;
-        if(index_val < 0){
-            index_val = breads.length - 1;
-        }
-        index.value = index_val
+    let bread_title: HTMLElement | null = document.querySelector('.breads_title');
+    let bread_desc: HTMLElement | null = document.querySelector('.breads_desc');
+    console.log(bread_desc, bread_title);
+    if(bread_title !== null && bread_desc !== null){
+        remove_visibility(bread_title, bread_desc)
+    } else {
+        console.log('elements do not exist');
+        return
     }
+
+    setTimeout(()=>{
+
+        if(event.type === "click"){
+            let index_val = index.value;
+            index_val--;
+            if(index_val < 0){
+                index_val = breads.length - 1;
+            }
+            index.value = index_val
+        }
+
+    }, 300);
 }
 
+const remove_visibility = (title: HTMLElement, desc: HTMLElement) => {
+    title.style.opacity='0';
+    desc.style.opacity='0';
+}
+
+onUpdated(()=>{
+console.log("dom updated");
+   let bread_title: HTMLElement | null = document.querySelector('.breads_title');
+   let bread_desc: HTMLElement | null = document.querySelector('.breads_desc');
+   setTimeout(()=>{
+        if(bread_title !== null){
+            bread_title.style.opacity = '1';
+        }
+
+        if(bread_desc !== null){
+            bread_desc.style.opacity = '1';
+        }
+   }, 100)
+})
 </script>
 
 <style lang="scss" scoped>
+
+
+
+
+
+
 .menu_article {
     display: grid;
     justify-items: start;
@@ -68,7 +107,12 @@ const index_dwn = (event: any) =>{
     width: 90%;
     text-align: start;
     row-gap: 35px;
-
+    >h2{
+        transition: 0.3s ease-in-out;
+    }
+    >p{
+    transition: 0.3s ease-in-out;
+    }
     >.control_span{
         display: flex;
         flex-wrap: wrap;
