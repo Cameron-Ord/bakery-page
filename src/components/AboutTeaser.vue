@@ -1,12 +1,26 @@
 <template>
     <article class="teaser_article">
         <h1>Behind the dough</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <teaser-text v-if="current_selection === 0"></teaser-text>
+        <about-team v-if="current_selection === 1"></about-team>
+        <about-contact v-if="current_selection === 2"></about-contact>
+        <about-history v-if="current_selection === 3"></about-history>
+        <about-locations v-if="current_selection === 4"></about-locations>
+        <about-philosophy v-if="current_selection === 5"></about-philosophy>
+        <about-ingredients v-if="current_selection === 6"></about-ingredients>
     </article>
 </template>
 
 <script setup lang="ts">
-
+import { ref } from 'vue';
+import TeaserText from './TeaserText.vue';
+import AboutTeam from './AboutTeam.vue';
+import AboutContact from './AboutContact.vue';
+import AboutHistory from './AboutHistory.vue';
+import AboutLocations from './AboutLocations.vue';
+import AboutPhilosophy from './AboutPhilosophy.vue';
+import AboutIngredients from './AboutIngredients.vue';
+const current_selection = ref(0)
 </script>
 
 <style lang="scss" scoped>
