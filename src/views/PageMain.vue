@@ -5,6 +5,7 @@
         </section>
         <section class="about_teaser">
             <about-teaser></about-teaser>
+            <about-controls></about-controls>
         </section>
         <section class="menu_section_breads">
             <breads-header></breads-header>
@@ -18,15 +19,6 @@
             <specials-header></specials-header>
             <specials-items></specials-items>
         </section>
-        <section class="about_section">
-            <about-philosophy></about-philosophy>
-            <about-team></about-team>
-            <about-locations></about-locations>
-            <about-ingredients></about-ingredients>
-        </section>
-        <section class="contact_section">
-            <contact-us></contact-us>
-        </section>
     </main>
 </template>
 
@@ -36,29 +28,38 @@ import BreadsHeader from '@/components/BreadsHeader.vue';
 import BreadsItems from '@/components/BreadsItems.vue';
 import SpecialsHeader from '@/components/SpecialsHeader.vue'
 import SpecialsItems from '@/components/SpecialsItems.vue'
-import AboutPhilosophy from '@/components/AboutPhilosophy.vue'
-import AboutTeam from '@/components/AboutTeam.vue'
-import AboutLocations from '@/components/AboutLocations.vue'
-import AboutIngredients from '@/components/AboutIngredients.vue'
-import ContactUs from '@/components/ContactUs.vue'
+import AboutControls from '@/components/AboutControls.vue';
 import PastriesHeader from '@/components/PastriesHeader.vue'
 import PastriesItems from '@/components/PastriesItems.vue'
 import AboutTeaser from '@/components/AboutTeaser.vue';
 </script>
 
 <style lang="scss" scoped>
-$bg: whitesmoke;
+
 .page_main{
     display: grid;
     align-items: center;
     min-height: 100vh;
+    row-gap: 50px;
+    >.specials_section{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        row-gap: 25px;
+    }
+    >.menu_section_pastries{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        row-gap: 25px;
+    }
 
     >.about_teaser{
         display: grid;
         align-items: center;
         padding-top: 25px;
         padding-bottom: 25px;
-        background-color: $bg;
+        row-gap: 25px;
     }
     >.hero_section{
         padding-top: 25px;

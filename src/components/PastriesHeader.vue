@@ -9,5 +9,7 @@
 </script>
 
 <style scoped>
-
+.menu_header{
+    display: flex; 
+}
 </style>

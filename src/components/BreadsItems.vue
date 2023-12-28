@@ -1,14 +1,10 @@
 <template>
     <article class="menu_article">
-        <span class="menu_item">
-            <div class="item_text">
-                <h2>{{breads[index]['Title']}}</h2>
-                <p>{{ breads[index]['Desc'] }}</p>
-            </div>
-        </span>
-        <span class="controls">
-            <img @click="index_dwn($event)" src="/svgs/larrow.svg" alt="a left arrow">
-            <img @click="index_up($event)" src="/svgs/rarrow.svg" alt="a right arrow">
+        <h2>{{ breads[index]['Title'] }}</h2>
+        <p>{{ breads[index]['Desc'] }}</p>
+        <span class="control_span">
+            <img @click="index_dwn" src="/svgs/larrow.svg" alt="">
+            <img @click="index_up" src="/svgs/rarrow.svg" alt="">
         </span>
     </article>
 </template>
@@ -64,57 +60,24 @@ const index_dwn = (event: any) =>{
 </script>
 
 <style lang="scss" scoped>
-$text: #fff;
-$accent: #CDA061;
-$bg_rbga: rgba(16, 15, 12, 0.5);
-
 .menu_article {
     display: grid;
-    justify-items: center;
+    justify-items: start;
+    justify-self: center;
     align-items: center;
-    row-gap: 25px;
+    width: 90%;
+    text-align: start;
+    row-gap: 35px;
 
-    >.controls{
+    >.control_span{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        width: 70%;
+        width: 100%;
+        justify-content: space-evenly;
+        justify-self: center;
         >img{
-            width: 50px;
+            width: 30px;
         }
     }
-
-
-    >.menu_item {
-        padding: 10px;
-        border-radius: 10px;
-        width: 80%;
-        background-color: $bg_rbga;
-        display: flex;
-        row-gap: 20px;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        >.item_text {
-            display: flex;
-            align-items: start;
-            text-align: start;
-            flex-direction: column;
-            row-gap: 10px;
-
-            >h2{
-                font-size: clamp(1.40rem, 2vw, 1.50rem);
-                color: $accent;
-            }
-
-            >p {
-                font-size: clamp(1.10rem, 2vw, 1.20rem);
-                letter-spacing: 0.5px;
-                color: $text;
-                font-weight: 400;
-                
-            }
-        }
-
-    }
-}</style>
+}
+</style>

@@ -17,9 +17,9 @@
 
 <style lang="scss" scoped>
 
-$text: #f5f5f5;
-$accent: #FFBF00;
-$bg_rbga: rgba(24, 22, 17, 0.5);
+
+
+
 .hero_article{
 
     display: grid;
@@ -48,9 +48,9 @@ $bg_rbga: rgba(24, 22, 17, 0.5);
         align-items: start;
         row-gap: 10px;
         >.view_menu_tag{
-            color: $accent;
+
             padding: 5.4px;
-            border: solid $accent 1px;
+
             border-radius: 5px;
         }
     }
@@ -62,11 +62,11 @@ $bg_rbga: rgba(24, 22, 17, 0.5);
   
         row-gap: 25px;
         >.text_header_name{
-            color: $accent;
+
             font-size: clamp(1.65rem, 2vw, 1.75rem);
         }
         >.text_sizing{
-            color: $text;
+
             font-size: clamp(1.25rem, 2vw, 1.35rem);
             font-weight: 500;
             letter-spacing: 0.5px;        

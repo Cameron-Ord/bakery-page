@@ -14,7 +14,6 @@
 
     >h1{
         font-size: clamp(1.65rem, 2vw, 1.85rem);
-        color: #ffffff;
     }
 }
 </style>

@@ -1,9 +1,7 @@
 <template>
-    <article class="about_history">
-        <div class="history_header">
-            <h3>Our history</h3>
-        </div>
-    </article>
+    <div class="history_header">
+        <p>lorem ipsum</p>
+    </div>
 </template>
 
 <script setup lang="ts">

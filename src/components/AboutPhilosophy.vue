@@ -1,9 +1,7 @@
 <template>
-    <article class="philosophy_article">
-        <div class="philo_header">
-            <h3>Our Philosophy</h3>
-        </div>
-    </article>
+    <div class="philo_desc">
+        <p>lorem ipsum</p>
+    </div>
 </template>
 
 <script setup lang="ts">

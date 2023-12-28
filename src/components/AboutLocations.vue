@@ -1,9 +1,7 @@
 <template>
-    <article class="locations_article">
-        <div class="locations_header">
-            <h3>Our Locations</h3>
-        </div>
-    </article>
+    <div class="locations_desc">
+        <p>Our Locations</p>
+    </div>
 </template>
 
 <script setup lang="ts">

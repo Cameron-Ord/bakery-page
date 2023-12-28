@@ -1,9 +1,7 @@
 <template>
-    <article class="team_article">
-        <div class="our_team_header">
-            <h3>Our Team</h3>
-        </div>
-    </article>
+    <div class="our_team_desc">
+        <p>lorem ipsum</p>
+    </div>
 </template>
 
 <script setup lang="ts">
