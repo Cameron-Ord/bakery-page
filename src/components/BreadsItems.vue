@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { onUpdated, ref } from 'vue';
+import { onUpdated, ref, nextTick } from 'vue';
 const index = ref(0);
 const breads = [
     {
@@ -36,14 +36,27 @@ const breads = [
 ]
 
 const index_up = (event: any) =>{
-    if(event.type === "click"){
-        let index_val = index.value;
-        index_val++;
-        if(index_val >= breads.length){
-            index_val = 0;
-        }
-        index.value = index_val
+    let bread_title: HTMLElement | null = document.querySelector('.breads_title');
+    let bread_desc: HTMLElement | null = document.querySelector('.breads_desc');
+
+    if(bread_title !== null && bread_desc !== null){
+        remove_visibility(bread_title, bread_desc)
+    } else {
+        console.log('elements do not exist');
+        return
     }
+
+    setTimeout(() => {
+        if(event.type === "click"){
+            let index_val = index.value;
+            index_val++;
+            if(index_val >= breads.length){
+                index_val = 0;
+            }
+            index.value = index_val
+        }
+    }, 300);
+
 }
 
 const index_dwn = (event: any) =>{
@@ -77,18 +90,20 @@ const remove_visibility = (title: HTMLElement, desc: HTMLElement) => {
 }
 
 onUpdated(()=>{
-console.log("dom updated");
+
    let bread_title: HTMLElement | null = document.querySelector('.breads_title');
    let bread_desc: HTMLElement | null = document.querySelector('.breads_desc');
-   setTimeout(()=>{
-        if(bread_title !== null){
-            bread_title.style.opacity = '1';
-        }
+   nextTick(()=>{
+       setTimeout(()=>{
+            if(bread_title !== null){
+                bread_title.style.opacity = '1';
+            }
 
-        if(bread_desc !== null){
-            bread_desc.style.opacity = '1';
-        }
-   }, 100)
+            if(bread_desc !== null){
+                bread_desc.style.opacity = '1';
+            }
+       }, 100)
+   })
 })
 </script>
 
