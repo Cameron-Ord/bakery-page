@@ -94,15 +94,14 @@ onUpdated(()=>{
    let bread_title: HTMLElement | null = document.querySelector('.breads_title');
    let bread_desc: HTMLElement | null = document.querySelector('.breads_desc');
    nextTick(()=>{
-       setTimeout(()=>{
-            if(bread_title !== null){
-                bread_title.style.opacity = '1';
-            }
-
+        if(bread_title !== null){
+            bread_title.style.opacity = '1';
+        }
+        setTimeout(()=>{
             if(bread_desc !== null){
                 bread_desc.style.opacity = '1';
             }
-       }, 100)
+        }, 150)
    })
 })
 </script>

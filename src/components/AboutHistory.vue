@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted } from 'vue';
+import { nextTick, onBeforeUnmount, onMounted } from 'vue';
 
 
 onBeforeUnmount(()=>{
@@ -17,11 +17,13 @@ onBeforeUnmount(()=>{
 
 onMounted(()=>{
     let header_div: HTMLElement | null = document.querySelector('.history_header');
-        setTimeout(()=>{
-        if(header_div !== null){
-            header_div.style.opacity = '1';
-        }
-        },100)
+        nextTick(()=>{
+           setTimeout(()=>{
+                if(header_div !== null){
+                    header_div.style.opacity = '1';
+                }
+            }, 10)
+        })
     }
 )
 </script>

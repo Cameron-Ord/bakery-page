@@ -1,7 +1,7 @@
 <template>
     <article class="menu_article">
-        <h2>{{ breads[index]['Title'] }}</h2>
-        <p>{{ breads[index]['Desc'] }}</p>
+        <h2 class="specials_title">{{ breads[index]['Title'] }}</h2>
+        <p class="specials_desc">{{ breads[index]['Desc'] }}</p>
         <span class="control_span">
             <img @click="index_dwn" src="/svgs/larrow.svg" alt="">
             <img @click="index_up" src="/svgs/rarrow.svg" alt="">
@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onUpdated, nextTick } from 'vue';
 const index = ref(0);
 const breads = [
     {
@@ -34,28 +34,74 @@ const breads = [
         "Img": "/images/pexels-nadin-sh-11214698.jpg"
     }
 ]
-
 const index_up = (event: any) =>{
-    if(event.type === "click"){
-        let index_val = index.value;
-        index_val++;
-        if(index_val >= breads.length){
-            index_val = 0;
-        }
-        index.value = index_val
+    
+    let bread_title : HTMLElement | null = document.querySelector('.specials_title');
+    let bread_desc : HTMLElement | null = document.querySelector('.specials_desc');
+    
+    if(bread_title !== null && bread_desc !== null){
+        remove_visibility(bread_title, bread_desc)
+    } else {
+        return
     }
+
+    setTimeout(()=>{   
+        if(event.type === "click"){
+            let index_val = index.value;
+            index_val++;
+            if(index_val >= breads.length){
+                index_val = 0;
+            }
+            index.value = index_val
+        }
+
+    }, 300);
 }
 
 const index_dwn = (event: any) =>{
-    if(event.type === "click"){
-        let index_val = index.value;
-        index_val--;
-        if(index_val < 0){
-            index_val = breads.length - 1;
-        }
-        index.value = index_val
+    let bread_title : HTMLElement | null = document.querySelector('.specials_title');
+    let bread_desc : HTMLElement | null = document.querySelector('.specials_desc');
+    
+    if(bread_title !== null && bread_desc !== null){
+        remove_visibility(bread_title, bread_desc)
+    } else {
+        return
     }
+
+    setTimeout(()=>{   
+        if(event.type === "click"){
+            let index_val = index.value;
+            index_val--;
+            if(index_val < 0){
+                index_val = breads.length - 1;
+            }
+            index.value = index_val
+        }
+    }, 300);
 }
+
+const remove_visibility = (title: HTMLElement, desc: HTMLElement) => {
+    title.style.opacity='0';
+    desc.style.opacity='0';
+}
+
+onUpdated(()=>{
+    let bread_title : HTMLElement | null = document.querySelector('.specials_title');
+    let bread_desc : HTMLElement | null = document.querySelector('.specials_desc');
+
+    nextTick(()=>{
+
+        if(bread_title !== null){
+            bread_title.style.opacity = '1';
+        }
+        setTimeout(()=>{
+            if(bread_desc !== null){
+                bread_desc.style.opacity = '1';
+            }
+        }, 150)
+    })
+        
+})
 
 </script>
 
@@ -68,6 +114,14 @@ const index_dwn = (event: any) =>{
     width: 90%;
     text-align: start;
     row-gap: 35px;
+        
+    >.specials_title{
+        transition: 0.3s ease-in-out;
+    }
+
+    >.specials_desc{
+        transition: 0.3s ease-in-out;
+    }
 
     >.control_span{
         display: flex;

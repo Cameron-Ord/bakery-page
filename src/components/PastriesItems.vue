@@ -1,7 +1,7 @@
 <template>
     <article class="menu_article">
-        <h2 class="breads_title">{{ breads[index]['Title'] }}</h2>
-        <p class="breads_desc">{{ breads[index]['Desc'] }}</p>
+        <h2 class="pastries_title">{{ breads[index]['Title'] }}</h2>
+        <p class="pastries_desc">{{ breads[index]['Desc'] }}</p>
         <span class="control_span">
             <img @click="index_dwn" src="/svgs/larrow.svg" alt="">
             <img @click="index_up" src="/svgs/rarrow.svg" alt="">
@@ -37,8 +37,8 @@ const breads = [
 
 const index_up = (event: any) =>{
     
-    let bread_title : HTMLElement | null = document.querySelector('.breads_title');
-    let bread_desc : HTMLElement | null = document.querySelector('.breads_desc');
+    let bread_title : HTMLElement | null = document.querySelector('.pastries_title');
+    let bread_desc : HTMLElement | null = document.querySelector('.pastries_desc');
     
     if(bread_title !== null && bread_desc !== null){
         remove_visibility(bread_title, bread_desc)
@@ -60,8 +60,8 @@ const index_up = (event: any) =>{
 }
 
 const index_dwn = (event: any) =>{
-    let bread_title : HTMLElement | null = document.querySelector('.breads_title');
-    let bread_desc : HTMLElement | null = document.querySelector('.breads_desc');
+    let bread_title : HTMLElement | null = document.querySelector('.pastries_title');
+    let bread_desc : HTMLElement | null = document.querySelector('.pastries_desc');
     
     if(bread_title !== null && bread_desc !== null){
         remove_visibility(bread_title, bread_desc)
@@ -87,21 +87,21 @@ const remove_visibility = (title: HTMLElement, desc: HTMLElement) => {
 }
 
 onUpdated(()=>{
-    let bread_title : HTMLElement | null = document.querySelector('.breads_title');
-    let bread_desc : HTMLElement | null = document.querySelector('.breads_desc');
+    let bread_title : HTMLElement | null = document.querySelector('.pastries_title');
+    let bread_desc : HTMLElement | null = document.querySelector('.pastries_desc');
 
     nextTick(()=>{
-        setTimeout(()=>{
-            if(bread_title !== null){
-                bread_title.style.opacity = '1';
-            }
+        if(bread_title !== null){
+            bread_title.style.opacity = '1';
+        }
 
+        setTimeout(()=>{
             if(bread_desc !== null){
                 bread_desc.style.opacity = '1';
             }
-        }, 100)
+        }, 150)
     })
-        
+           
 })
 
 </script>
@@ -115,6 +115,14 @@ onUpdated(()=>{
     width: 90%;
     text-align: start;
     row-gap: 35px;
+        
+    >.pastries_title{
+        transition: 0.3s ease-in-out;
+    }
+ 
+    >.pastries_desc{
+        transition: 0.3s ease-in-out;
+    }
 
     >.control_span{
         display: flex;
