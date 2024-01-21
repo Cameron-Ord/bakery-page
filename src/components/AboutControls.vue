@@ -14,11 +14,12 @@ const removed_tags: Array<string> = []
 const update_selection = (event: any) =>{
     const event_target_text: string = event.target.innerText;
     
+    event_tags.value.sort()
     if(event_target_text !== ''){
         const elements: NodeList = document.querySelectorAll('.h3_event_tag');  
         for (let e = 0; e < elements.length; e++){
             const element: Node = elements[e]
-           if(element instanceof HTMLElement){               
+            if(element instanceof HTMLElement){               
                 element.style.transition = '0s ease-in-out'
                 element.style.opacity = '0'  
             }
@@ -100,6 +101,11 @@ const determine_selection = (text: string) =>{
     flex-wrap: wrap;
     gap: 25px;
     >.h3_event_tag{
+        color: var(--rose);
+        cursor: pointer;
+        border: solid var(--rose) 1px;
+        padding: 5px;
+        border-radius: 5px;
         transition: 0.3s ease-in-out;
     }
 }

@@ -1,5 +1,7 @@
 <template>
     <div class="teaser_header">
+        
+        <h3>About Us</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
@@ -35,5 +37,15 @@ onMounted(()=>{
     flex-wrap: wrap;
     text-align: start;
     justify-content: start;
+    row-gap: 10px;
+
+    >p{
+
+        color: var(--violet);
+    }
+
+    >h3{
+        color: var(--violet);
+    }
 }
 </style>

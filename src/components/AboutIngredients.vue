@@ -1,5 +1,6 @@
 <template>
     <div class="ingredients_desc">
+        <h3>Our Ingredients</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
@@ -29,7 +30,7 @@ onMounted(()=>{
 )
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .ingredients_desc{
     opacity: 0;
     transition: 0.3s ease-in-out;
@@ -37,5 +38,16 @@ onMounted(()=>{
     flex-wrap: wrap;
     text-align: start;
     justify-content: start;
+    row-gap: 10px;
+    >p{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: var(--violet);
+    }
+    >h3{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: var(--violet);
+    }
 }
 </style>

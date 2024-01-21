@@ -114,7 +114,8 @@ onUpdated(()=>{
     width: 90%;
     text-align: start;
     row-gap: 35px;
-        
+    padding-top: 10px;
+    padding-bottom: 10px;
     >.specials_title{
         transition: 0.3s ease-in-out;
     }

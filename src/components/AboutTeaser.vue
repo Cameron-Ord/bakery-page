@@ -1,7 +1,7 @@
 <template>
     <div class="about_wrapper">
         <article class="teaser_article">
-            <h1>Beyond the dough</h1>
+            <h1 class="beyond_tag">Beyond the dough</h1>
             <teaser-text v-if="current_selection === 'none'"></teaser-text>
             <about-team v-if="current_selection === 'team'"></about-team>
             <contact-us v-if="current_selection === 'contact'"></contact-us>
@@ -34,7 +34,7 @@ const update_current_selection = (retrieved_data: string) =>{
 
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .about_wrapper{
     display: grid;
     align-items: center;
@@ -47,5 +47,9 @@ const update_current_selection = (retrieved_data: string) =>{
     display: flex;
     flex-direction: column;
     gap: 25px;
+    
+    >.beyond_tag{
+        color: var(--rose);
+    }
 }
 </style>

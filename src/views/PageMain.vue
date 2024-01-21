@@ -57,6 +57,7 @@ import AboutTeaser from '@/components/AboutTeaser.vue';
         align-items: center;
         padding-top: 25px;
         padding-bottom: 25px;
+        
     }
     >.hero_section{
         padding-top: 25px;
@@ -64,7 +65,7 @@ import AboutTeaser from '@/components/AboutTeaser.vue';
         display: grid;
         align-items: start;
         justify-items: center;
-        background-image: url('/images/mae-mu-m9pzwmxm2rk-unsplash.jpg');
+        background-image: url('/images/pexels-alina-kurson-8957091.jpg');
         background-size:cover;
         background-position: 50% center;
         min-height: 450px;
@@ -77,10 +78,10 @@ import AboutTeaser from '@/components/AboutTeaser.vue';
         row-gap: 25px;
         align-items: center;
         justify-items: center;
-        background-image: url('/images/pexels-skyler-ewing-10011794.jpg');
-        background-size: cover;
-        background-position: 25% center;
-
+        background-image: url('/images/mae-mu-m9pzwmxm2rk-unsplash.jpg');
+        background-size:cover;
+        background-position: 50% center;
+ 
     }
 }
 </style>

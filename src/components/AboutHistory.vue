@@ -1,5 +1,6 @@
 <template>
     <div class="history_header">
+        <h3>Our History</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 </template>
@@ -28,7 +29,7 @@ onMounted(()=>{
 )
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .history_header{
     opacity: 0;
     transition: 0.3s ease-in-out;
@@ -36,5 +37,17 @@ onMounted(()=>{
     flex-wrap: wrap;
     text-align: start;
     justify-content: start;
+    row-gap: 10px;
+
+    >h3{
+        color: var(--violet);
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    >p{
+        color: var(--violet);
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 }
 </style>

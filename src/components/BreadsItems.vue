@@ -114,6 +114,8 @@ onUpdated(()=>{
 
 
 .menu_article {
+ 
+    background-color: var(--transparent_violet);
     display: grid;
     justify-items: start;
     justify-self: center;
@@ -121,11 +123,17 @@ onUpdated(()=>{
     width: 90%;
     text-align: start;
     row-gap: 35px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     >h2{
+        color: var(--quartz);
         transition: 0.3s ease-in-out;
     }
     >p{
-    transition: 0.3s ease-in-out;
+        color: var(--white);
+        transition: 0.3s ease-in-out;
     }
     >.control_span{
         display: flex;
