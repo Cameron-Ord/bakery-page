@@ -71,13 +71,15 @@ const show_image = (team_image: HTMLElement | null) => {
         
     }
     >img{
-      
+        max-height: 700px;
+        min-height: 125px;
+        height: auto;
         transition: 0.3s ease-in-out;
         opacity: 0;
         min-width: 75px;
         max-width: 500px;
         width: 90%;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <article class="menu_article">
-        <h2 class="specials_title">{{ breads[index]['Title'] }}</h2>
-        <p class="specials_desc">{{ breads[index]['Desc'] }}</p>
+        <h2 class="specials_title item_h2_tag">{{ breads[index]['Title'] }}</h2>
+        <p class="specials_desc item_p_tag">{{ breads[index]['Desc'] }}</p>
         <span class="control_span">
             <img @click="index_dwn" src="/svgs/larrow.svg" alt="">
             <img @click="index_up" src="/svgs/rarrow.svg" alt="">
@@ -114,8 +114,8 @@ onUpdated(()=>{
     width: 90%;
     text-align: start;
     row-gap: 35px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+
     >.specials_title{
         transition: 0.3s ease-in-out;
     }
@@ -131,7 +131,7 @@ onUpdated(()=>{
         justify-content: space-between;
         justify-self: center;
         >img{
-            width: 30px;
+            width: 40px;
         }
     }
 }

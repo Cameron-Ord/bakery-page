@@ -1,7 +1,7 @@
 <template>
     <article class="menu_article">
-        <h2 class="breads_title">{{ breads[index]['Title'] }}</h2>
-        <p class="breads_desc">{{ breads[index]['Desc'] }}</p>
+        <h2 class="breads_title item_h2_tag">{{ breads[index]['Title'] }}</h2>
+        <p class="breads_desc item_p_tag">{{ breads[index]['Desc'] }}</p>
         <span class="control_span">
             <img @click="index_dwn" src="/svgs/larrow.svg" alt="">
             <img @click="index_up" src="/svgs/rarrow.svg" alt="">
@@ -108,8 +108,6 @@ onUpdated(()=>{
 
 <style lang="scss" scoped>
 .menu_article {
- 
-
     display: grid;
     justify-items: start;
     justify-self: center;
@@ -117,10 +115,6 @@ onUpdated(()=>{
     width: 90%;
     text-align: start;
     row-gap: 35px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     >h2{
 
         transition: 0.3s ease-in-out;
@@ -136,7 +130,7 @@ onUpdated(()=>{
         justify-content: space-between;
         justify-self: center;
         >img{
-            width: 30px;
+            width: 40px;
         }
     }
 }

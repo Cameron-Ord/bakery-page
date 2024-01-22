@@ -45,28 +45,32 @@ import AboutTeaser from '../components/AboutTeaser.vue';
 
     >.product_section_wrapper{
         display: grid;
-        row-gap: 50px;
+
         align-items: center;
         
         >.menu_section_breads{
             padding-top: 25px;
             padding-bottom: 25px;
             display: grid;
-            row-gap: 50px;
+            row-gap: 25px;
             align-items: center;
             justify-items: center;
         }
         >.specials_section{
+            padding-top: 25px;
+            padding-bottom: 25px;
             display: grid;
             align-items: center;
             justify-items: center;
-            row-gap: 50px;
+            row-gap: 25px;
         }
         >.menu_section_pastries{
+            padding-top: 25px;
+            padding-bottom: 25px;
             display: grid;
             align-items: center;
             justify-items: center;
-            row-gap: 50px;
+            row-gap: 25px;
         }
     }
 
@@ -87,9 +91,8 @@ import AboutTeaser from '../components/AboutTeaser.vue';
         background-image: url('/images/mobile_hero.jpg');
         background-size:cover;
         background-position: 50% center;
-        min-height: 60vh;
-       
-       
+        min-height: 40vh;
+        
     }
 }
 </style>

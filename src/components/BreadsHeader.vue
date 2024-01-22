@@ -13,14 +13,8 @@
     display: flex;
     text-align: start; 
     width: 90%;
- 
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
     >h1{
-        
-        font-size: clamp(1.65rem, 2vw, 1.85rem);
+    
     }
 }
 </style>

@@ -3,7 +3,9 @@ body{
     padding: 0px;
     margin: 0px;
 }
-
+.control_span{
+    padding: 5px;
+}
 p{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: clamp(1rem, 2vw, 1.2rem);
@@ -12,13 +14,13 @@ p{
 }
 h1{
     font-family:'Times New Roman', Times, serif;
-    font-size: clamp(1.35rem, 2vw, 1.45rem);
+    font-size: clamp(1.65rem, 2vw, 1.85rem);
     padding: 0px;
     margin: 0px;
 }
 h2{
     font-family:'Times New Roman', Times, serif;
-    font-size: clamp(1.25rem, 2vw, 1.40rem);
+    font-size: clamp(1.45rem, 2vw, 1.60rem);
     padding: 0px;
     margin: 0px;
 }
