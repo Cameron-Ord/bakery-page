@@ -1,0 +1,41 @@
+:root{
+    --t_white: rgba(255, 255, 255, 0.65); 
+    --mint_green: #E5FCF5;
+    --celadon: #B3DEC1;
+    --dp: #210124;
+    --claret: #750D37;
+    
+    --white: #FFFFFF;
+    --black: #00171F;
+    --p_blue: #003459;
+    --cerulean: #007EA7;
+    --l_blue: #00A8E8;
+
+    --indigo: #9381FF;
+    --peri: #B8B8FF;
+    --ghost_white: #F8F7FF;
+    --ant_white: #FFEEDD;
+    --apricot: #FFD8BE;
+}
+
+body{
+    background-color: var(--white);
+}
+
+.hero_article{
+   background-color: var(--t_white);
+}
+
+.text_sizing{
+    color: var(--dp);
+}
+
+.view_menu_tag{
+    color: var(--claret);
+    border: solid var(--claret) 1px;
+    cursor: pointer;
+}
+
+.text_header_name{
+    color: var(--claret);
+}

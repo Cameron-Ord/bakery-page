@@ -1,6 +1,6 @@
 <template>
     <div class="menu_header">
-        <h1>Our bread</h1>
+        <h1 class="product_header">Our bread</h1>
     </div>
 </template>
 
@@ -19,7 +19,7 @@
     padding-left: 5px;
     padding-right: 5px;
     >h1{
-        color: var(--quartz);
+        
         font-size: clamp(1.65rem, 2vw, 1.85rem);
     }
 }

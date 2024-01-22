@@ -107,15 +107,9 @@ onUpdated(()=>{
 </script>
 
 <style lang="scss" scoped>
-
-
-
-
-
-
 .menu_article {
  
-    background-color: var(--transparent_violet);
+
     display: grid;
     justify-items: start;
     justify-self: center;
@@ -128,18 +122,18 @@ onUpdated(()=>{
     padding-top: 10px;
     padding-bottom: 10px;
     >h2{
-        color: var(--quartz);
+
         transition: 0.3s ease-in-out;
     }
     >p{
-        color: var(--white);
+
         transition: 0.3s ease-in-out;
     }
     >.control_span{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-evenly;
+        width: 85%;
+        justify-content: space-between;
         justify-self: center;
         >img{
             width: 30px;

@@ -48,8 +48,8 @@ const update_current_selection = (retrieved_data: string) =>{
     flex-direction: column;
     gap: 25px;
     
-    >.beyond_tag{
-        color: var(--rose);
-    }
+
+
+
 }
 </style>

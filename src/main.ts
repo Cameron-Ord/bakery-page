@@ -1,5 +1,5 @@
 import './assets/main.css'
-
+import './assets/colours.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import VueCookies from 'vue3-cookies'

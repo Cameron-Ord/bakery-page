@@ -1,7 +1,7 @@
 <template>
     <div class="locations_desc">
-        <h3>Our Locations</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        <h3 class="about_h3_tags">Our Locations</h3>
+        <p class="about_p_tags">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
     </div>
@@ -42,13 +42,13 @@ onMounted(()=>{
     >p{
         padding-top: 5px;
         padding-bottom: 5px;
-        color: var(--violet);
+        
     }
 
     >h3{
         padding-top: 5px;
         padding-bottom: 5px;
-        color: var(--violet);
+       
     }
 
 }

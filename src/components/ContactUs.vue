@@ -1,7 +1,7 @@
 <template>
     <div class="contact_desc">
-        <h3>Contact Us</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        <h3 class="about_h3_tag">Contact Us</h3>
+        <p class="about_p_tag">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
     </div>
@@ -44,14 +44,14 @@ onMounted(()=>{
 
         padding-top: 5px;
         padding-bottom: 5px;
-        color:var(--violet);
+    
     }
 
     >p{
  
         padding-top: 5px;
         padding-bottom: 5px;
-        color: var(--violet);
+   
     }
 }
 </style>

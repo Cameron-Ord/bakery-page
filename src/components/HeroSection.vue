@@ -25,7 +25,7 @@
     display: grid;
     justify-items: start;
     align-items: center;
-    background-color: var(--transparent_violet);  
+
     width: 90%;
     row-gap: 35px;
     padding-right: 10px;
@@ -48,9 +48,9 @@
         align-items: start;
         row-gap: 10px;
         >.view_menu_tag{
-            border: solid var(--quartz) 1px;
+
             padding: 5.4px;
-            color: var(--quartz);
+
             border-radius: 5px;
         }
     }
@@ -62,11 +62,11 @@
   
         row-gap: 25px;
         >.text_header_name{
-            color: var(--quartz);
+
             font-size: clamp(1.65rem, 2vw, 1.75rem);
         }
         >.text_sizing{
-            color: var(--white);
+
             font-size: clamp(1.25rem, 2vw, 1.35rem);
             font-weight: 500;
             letter-spacing: 0.5px;        

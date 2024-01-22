@@ -1,7 +1,7 @@
 <template>
     <div class="history_header">
-        <h3>Our History</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h3 class="about_h3_tag">Our History</h3>
+        <p class="about_p_tag">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 </template>
 
@@ -40,12 +40,12 @@ onMounted(()=>{
     row-gap: 10px;
 
     >h3{
-        color: var(--violet);
+
         padding-top: 5px;
         padding-bottom: 5px;
     }
     >p{
-        color: var(--violet);
+
         padding-top: 5px;
         padding-bottom: 5px;
     }

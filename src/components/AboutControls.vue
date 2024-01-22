@@ -101,9 +101,9 @@ const determine_selection = (text: string) =>{
     flex-wrap: wrap;
     gap: 25px;
     >.h3_event_tag{
-        color: var(--rose);
+
         cursor: pointer;
-        border: solid var(--rose) 1px;
+
         padding: 5px;
         border-radius: 5px;
         transition: 0.3s ease-in-out;

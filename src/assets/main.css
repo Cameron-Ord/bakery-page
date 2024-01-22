@@ -1,21 +1,5 @@
 
-
-
-:root {
-    --half_transparent_white: rgba(255, 238, 219, 0.5);
-    --transparent_white: rgba(255, 238, 219, 0.25);
-    --transparent_rose: rgba(165, 56, 96, 0.25);
-    --transparent_violet: rgba(76, 59, 77, 0.40);
-    --white: #FFEEDB;
-    --violet: #4C3B4D;
-    --rose: #A53860;
-    --quartz: #ADA8B6;
-    --mint :#61C9A8;
-}
-
-
 body{
-    background-color: var(--white);
     padding: 0px;
     margin: 0px;
 }

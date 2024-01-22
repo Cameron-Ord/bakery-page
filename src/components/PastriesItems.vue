@@ -128,8 +128,8 @@ onUpdated(()=>{
     >.control_span{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-evenly;
+        width: 85%;
+        justify-content: space-between;
         justify-self: center;
         >img{
             width: 30px;
