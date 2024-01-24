@@ -25,7 +25,7 @@
     display: grid;
     justify-items: start;
     align-items: center;
-
+    max-width: 425px;
     width: 90%;
     row-gap: 35px;
     padding-right: 10px;
@@ -72,5 +72,49 @@
             letter-spacing: 0.5px;        
         }
     }
+}
+
+@media only screen and (min-width: 770px){
+    .hero_article{
+        
+
+        >.hero_image_div{
+
+            >.svg_tag{
+
+            }
+        }
+        >.hero_section_cto{
+            >.view_menu_tag{
+            }
+        }
+        >.hero_text_header{
+            >.text_header_name{
+            }
+            >.text_sizing{
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .hero_article{
+            >.hero_image_div{
+
+                >.svg_tag{
+
+                }
+            }
+            >.hero_section_cto{
+                >.view_menu_tag{
+                }
+            }
+            >.hero_text_header{
+                >.text_header_name{
+                }
+                >.text_sizing{
+                }
+            }
+        }
 }
 </style>

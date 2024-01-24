@@ -59,12 +59,19 @@ const index_up = (event: any) =>{
 
 }
 
+const on_click_effect = (event: any) => {
+    event.style['background-color'] = 'var(--claret)';
+    setTimeout(()=>{
+        event.style['background-color'] = '';
+    }, 300)
+}
+
 const index_dwn = (event: any) =>{
     let bread_title: HTMLElement | null = document.querySelector('.breads_title');
     let bread_desc: HTMLElement | null = document.querySelector('.breads_desc');
-    console.log(bread_desc, bread_title);
     if(bread_title !== null && bread_desc !== null){
         remove_visibility(bread_title, bread_desc)
+        on_click_effect(event.target);
     } else {
         console.log('elements do not exist');
         return

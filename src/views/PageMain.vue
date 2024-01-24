@@ -95,4 +95,47 @@ import AboutTeaser from '../components/AboutTeaser.vue';
         
     }
 }
+
+@media only screen and (min-width: 770px)  {
+     .page_main{
+
+        >.product_section_wrapper{
+            
+            >.menu_section_breads{
+            }
+            >.specials_section{
+            }
+            >.menu_section_pastries{
+            }
+        }
+
+
+        >.about_teaser{
+        }
+        >.hero_section{       
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px){
+     .page_main{
+
+        >.product_section_wrapper{
+            
+            >.menu_section_breads{
+            }
+            >.specials_section{
+            }
+            >.menu_section_pastries{
+            }
+        }
+
+
+        >.about_teaser{
+        }
+        >.hero_section{       
+        }
+    }
+}
+
 </style>
