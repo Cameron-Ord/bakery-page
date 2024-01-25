@@ -6,7 +6,9 @@
         <section class="about_teaser">
             <about-teaser></about-teaser>
         </section>
-
+        <section class="intervalic_image_section">
+            <bread-interval></bread-interval>
+        </section>
         <div class="product_section_wrapper">
             <section class="menu_section_breads">
                 <breads-header></breads-header>
@@ -25,6 +27,7 @@
 </template>
 
 <script setup lang="ts">
+import BreadInterval from '../components/BreadInterval.vue';
 import HeroSection from '../components/HeroSection.vue';
 import BreadsHeader from '../components/BreadsHeader.vue';
 import BreadsItems from '../components/BreadsItems.vue';
@@ -42,12 +45,13 @@ import AboutTeaser from '../components/AboutTeaser.vue';
     align-items: center;
     min-height: 100vh;
     row-gap: 50px;
-
+    >.intervalic_image_section{
+        display: grid;
+        align-items: center;
+    }
     >.product_section_wrapper{
         display: grid;
-
         align-items: center;
-        
         >.menu_section_breads{
             padding-top: 25px;
             padding-bottom: 25px;

@@ -16,7 +16,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { nextTick, onUpdated, ref } from 'vue';
 import AboutControls from './AboutControls.vue';
 import TeaserText from './TeaserText.vue';
 import AboutTeam from './AboutTeam.vue';
@@ -26,9 +26,32 @@ import AboutLocations from './AboutLocations.vue';
 import AboutPhilosophy from './AboutPhilosophy.vue';
 import AboutIngredients from './AboutIngredients.vue';
 const current_selection = ref('none');
+
 const update_current_selection = (retrieved_data: string) =>{
-    
     current_selection.value = retrieved_data;
+}
+
+onUpdated(()=>{
+    
+    nextTick(()=>{
+        const beyond_tag: HTMLElement | null = document.querySelector('.beyond_tag');
+        if(beyond_tag !== null){
+            move_to_element(beyond_tag);
+        }   
+    })
+
+})
+
+const move_to_element = (h1_tag: HTMLElement) => {
+    
+    let element_rect = undefined;
+    let element_y = undefined;
+    element_rect = h1_tag.getBoundingClientRect();
+    element_y = window.scrollY + element_rect.top 
+    window.scrollTo({
+        top:element_y,
+        behavior: 'smooth',
+    });
 }
 
 
