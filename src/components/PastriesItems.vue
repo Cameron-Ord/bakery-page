@@ -3,8 +3,8 @@
     <h2 class="pastries_title item_h2_tag">{{ breads[index]['Title'] }}</h2>
     <p class="pastries_desc item_p_tag">{{ breads[index]['Desc'] }}</p>
     <span class="control_span">
-      <img @click="index_dwn" src="/svgs/larrow.svg" alt="">
-      <img @click="index_up" src="/svgs/rarrow.svg" alt="">
+      <img @click="index_dwn($event)" src="/svgs/larrow.svg" alt="">
+      <img @click="index_up($event)" src="/svgs/rarrow.svg" alt="">
     </span>
   </article>
 </template>
