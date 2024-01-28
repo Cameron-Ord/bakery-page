@@ -1,13 +1,3 @@
-<template>
-    <footer class="page_footer">
-        <nav class="footer_navigation">
-            <img src="/svgs/fb.svg" alt="facebook icon">
-            <img src="/svgs/insta.svg" alt="instagram icon">
-            <img src="/svgs/notx.svg" alt="twitter icon">
-            <img src="/svgs/git.svg" alt="github icon">
-        </nav>
-    </footer>
-</template>
 
 <script setup lang="ts">
 
@@ -16,25 +6,20 @@
 <style lang="scss" scoped>
 .page_footer{
     display: grid;
-    align-items: center;
-    justify-items: center;
-    min-height: 200px;
-    >.footer_navigation{
-        width: 80%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-evenly;
-        row-gap: 10px;
-        column-gap: 10px;
-
-        >img{
-            padding: 5px;
-            cursor: pointer;
-            width: 10vw;
-            max-width: 50px;
-            min-width: 25px;
-        }
-    }
+    min-height: 100px;
 }
 </style>
+
+<template>
+    <footer class="page_footer">
+        <span>
+            <h2>Freshest Bakery</h2>
+            <h3>321-real-number</h3>
+        </span>
+        <span>
+            <img src="/svgs/fb.svg" alt="" class="svg_tag">
+            <img src="/svgs/insta.svg" alt="" class="svg_tag">
+            <img src="/svgs/notx.svg" alt="" class="svg_tag">
+        </span>
+    </footer>
+</template>

@@ -1,113 +1,69 @@
-<template>
-  <div class="philo_desc">
-    <div class="about_divider">
-      <h3 class="about_h3_tag">Our Philosophy</h3>
-      <p class="about_p_tag">At Freshest Bakery, our philosophy is simple yet profound: we believe in the alchemy of
-        passion
-        and precision in every creation. We are dedicated to the art of baking, where quality reigns supreme. From
-        handpicked, premium ingredients to the artisanal touch of our bakers, we ensure that each treat is a masterpiece
-        of
-        flavor and texture.</p>
-    </div>
-    <div class="about_divider">
-      <h4 class="about_h4_tag">Beyond Baking</h4>
-      <p class="about_p_tag">Our philosophy extends beyond the confines of our ovens. We are committed to fostering a
-        sense
-        of community and sustainability. Freshest Bakery is not just a place to indulge your sweet tooth; it's a space
-        where
-        connections are formed, and memories are sweetly woven. Embracing sustainability, we strive to tread lightly on
-        the
-        Earth, incorporating eco-friendly practices into every aspect of our bakery.</p>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted } from 'vue';
+import {ref, onBeforeMount} from 'vue'
+const index: any = ref(0);
+const sub_dir_content = [
+  { "title": "Passion for Craft", "content": "At Freshest Bakery, our philosophy is grounded in a deep passion for the craft of baking. We believe that exceptional ingredients, careful precision, and a touch of creativity are the key ingredients for crafting extraordinary treats. Each creation is a labor of love, a symphony of flavors that celebrates the artistry and joy inherent in the world of baking." },
+  { "title": "Commitment to Quality", "content": "Quality is the cornerstone of our philosophy. From the moment we select our ingredients to the final presentation of our baked goods, we adhere to the highest standards. We believe that every bite should be a moment of pure pleasure, a testament to our commitment to delivering excellence in every aspect of our craft." },
+  { "title": "Creativity Unleashed", "content": "Baking is an art form, and our philosophy embraces the freedom of creativity. Our talented bakers are encouraged to experiment, innovate, and push the boundaries of traditional flavors. This spirit of exploration ensures that our menu is always infused with fresh ideas and delightful surprises, offering our customers an ever-evolving experience." },
+]
+const button_array: any = ref([])
+const selection: any = ref(sub_dir_content[index.value]['title'])
 
-onBeforeUnmount(() => {
-  let header_div: HTMLElement | null = document.querySelector('.philo_desc');
-  if (header_div !== null) {
-    header_div.style.opacity = '0';
+const pop_array = () => {
+  button_array.value.pop();
+  if(button_array.value.length > 0){
+    pop_array();
   }
+}
+const create_button_array = () => {
+  pop_array();
+  for(let i = 0; i < sub_dir_content.length; ++i){
+    const title = sub_dir_content[i]['title']
+    if(selection.value !== title){
+      button_array.value.push(sub_dir_content[i])
+    }
+  }
+}
+const get_item_index = (event: any) => {
+  const title = event.target.innerText;
+  let item_index: number | undefined;
+  for(let i = 0; i < sub_dir_content.length; ++i){
+    if(sub_dir_content[i]['title'] === title){
+      item_index = (i);
+    }
+  }
+  if(item_index !== undefined){
+    index.value = item_index;
+    selection.value = sub_dir_content[index.value]['title'];
+    create_button_array();
+  }
+}
+
+onBeforeMount(() => {
+  create_button_array();
 })
 
-onMounted(() => {
-  
-
-
-  let header_div: HTMLElement | null = document.querySelector('.philo_desc');
-  nextTick(() => {
-    setTimeout(() => {
-      if (header_div !== null) {
-        header_div.style.opacity = '1';
-      }
-    }, 10)
-  })
-
-
-}
-)
 </script>
-
 <style lang="scss" scoped>
-.philo_desc {
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-  display: flex;
-  flex-wrap: wrap;
-  text-align: start;
-  row-gap: 25px;
-
-  >.about_divider {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: start;
-    row-gap: 25px;
-
-    >h3 {
-      padding-top: 5px;
-      padding-bottom: 5px;
-
-    }
-
-    >p {
-      padding-top: 5px;
-      padding-bottom: 5px;
-
-    }
-  }
-
-}
-
-@media only screen and (min-width: 770px) {
-  .philo_desc {
-
-    >.about_divider {
-      >h3 {}
-
-      >p {}
-    }
-
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .philo_desc {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-    row-gap: 50px;
-
-    >.about_divider {
-      width: 80%;
-
-
-      >h3 {}
-
-      >p {}
-    }
-
-  }
+.about_image{
+  width: 80%;
+  height: auto;
 }
 </style>
+<template>
+  <article>
+    <span>
+      <img src="/images/example4.jpg" alt="" class="about_image">
+    </span>
+    <span>
+      <div>
+        <h2>Our Philosophy</h2>
+        <h3>{{ sub_dir_content[index]['title'] }}</h3>
+        <p>{{ sub_dir_content[index]['content'] }}</p>
+      </div>
+      <div>
+        <h4 v-for="(item, i) in button_array" :key="i" @click="get_item_index($event)">{{ item['title'] }}</h4>
+      </div>
+    </span>
+  </article>
+</template>

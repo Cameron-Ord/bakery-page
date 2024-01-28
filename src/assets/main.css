@@ -3,9 +3,6 @@ body{
     padding: 0px;
     margin: 0px;
 }
-.control_span{
-    padding: 5px;
-}
 p{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: clamp(1rem, 2vw, 1.2rem);
@@ -35,4 +32,8 @@ h4{
     font-size: clamp(1.15rem, 2vw, 1.25rem);
     padding: 0px;
     margin: 0px;
+}
+
+.svg_tag{
+    width: 30px;
 }
