@@ -32,8 +32,6 @@
     <section class="contact-location-wrapper">
       <section class="contact_section">
         <contact-us></contact-us>
-      </section>
-      <section class="locations_section">
         <about-locations></about-locations>
       </section>
     </section>
@@ -82,10 +80,11 @@ import AboutTeaser from '../components/AboutTeaser.vue';
     }
 
     >.specials_section {
-      display: grid;
-      align-items: center;
-      justify-items: center;
+      display: flex;
+      flex-wrap: wrap;
       row-gap: 25px;
+      align-items: center;
+      justify-content: center;
 
 
       >.sub_section {
@@ -97,10 +96,11 @@ import AboutTeaser from '../components/AboutTeaser.vue';
     }
 
     >.menu_section_pastries {
-      display: grid;
-      align-items: center;
-      justify-items: center;
+      display: flex;
+      flex-wrap: wrap;
       row-gap: 25px;
+      align-items: center;
+      justify-content: center;
 
 
       >.sub_section {
@@ -142,18 +142,12 @@ import AboutTeaser from '../components/AboutTeaser.vue';
     justify-items: center;
     padding-top: 40px;
     padding-bottom: 40px;
+
     >.contact_section{
       display: grid;
-      align-items: center;
-      justify-items: center;
       width: 90%;
-    }
-
-    >.locations_section{
-      display: grid;
       align-items: center;
-      justify-items: center;
-      width: 90%;
+      row-gap: 35px;
     }
   }
 }
@@ -205,22 +199,12 @@ import AboutTeaser from '../components/AboutTeaser.vue';
     >.hero_section {}
 
     >.contact-location-wrapper{
-      display: grid;
-      align-items: center;
-      grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
 
-      >.contact_section{
-        display: grid;
-        align-items: center;
-        justify-items: center;
-      }
+    >.contact_section{
 
-      >.locations_section{
-        display: grid;
-        align-items: center;
-        justify-items: center;
-      }
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+  }
   }
 }
 
@@ -268,24 +252,18 @@ import AboutTeaser from '../components/AboutTeaser.vue';
     >.about_teaser {}
 
     >.hero_section {
-
       min-height: 100vh;
       background-image: url('/images/desktop_hero.jpg');
 
     }
     >.contact-location-wrapper{
-      display: grid;
-      align-items: center;
+
       >.contact_section{
-        display: grid;
-        align-items: center;
-        justify-items: center;
+
       }
 
       >.locations_section{
-        display: grid;
-        align-items: center;
-        justify-items: center;
+
       }
     }
   }

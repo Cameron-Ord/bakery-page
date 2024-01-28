@@ -1,11 +1,13 @@
 <template>
-  <div class="locations_desc">
-    <h3 class="about_h3_tag">Our Locations</h3>
-    <p class="about_p_tag">1504 realstreet NW - Edmonton, AB</p>
-    <p class="about_p_tag">1732 actualstreet NW - Calgary, AB</p>
-    <p class="about_p_tag">1243 greatstreet SW - Red Deer, AB </p>
-    <p class="about_p_tag">1033 astreet SE - Medicine Hat, AB</p>
-  </div>
+  <article class="locations_desc">
+    <span>
+      <h3 class="about_h3_tag">Our Locations</h3>
+      <p class="about_p_tag">1504 realstreet NW - Edmonton, AB</p>
+      <p class="about_p_tag">1732 actualstreet NW - Calgary, AB</p>
+      <p class="about_p_tag">1243 greatstreet SW - Red Deer, AB </p>
+      <p class="about_p_tag">1033 astreet SE - Medicine Hat, AB</p>
+    </span>
+  </article>
 </template>
 
 <script setup lang="ts">
@@ -35,22 +37,23 @@ onMounted(() => {
 .locations_desc {
   opacity: 0;
   transition: 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-items: center;
   text-align: start;
-  align-items: start;
-  justify-content: start;
-  row-gap: 10px;
-  width: 90%;
+  row-gap: 35px;
+  >span{
+      display: flex;
+      flex-direction: column;
+      row-gap: 25px;
+      justify-content: start;
+      align-items: start;
+      >h2 {
+      }
 
-  >p {
-    padding: 10px;
-  }
-
-  >h3 {
-    word-break: break-all;
-    padding: 10px;
-  }
+      >h3{
+        cursor: pointer;
+      }
+    }
 
 }
 </style>
