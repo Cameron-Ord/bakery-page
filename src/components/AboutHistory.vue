@@ -1,20 +1,23 @@
 <template>
   <div class="history_header">
-    <h3 class="about_h3_tag">Our History</h3>
-    <p class="about_init_p_tag">Welcome to the sweet tale of Freshest Bakery. Born out of a shared love for baking and a
-      commitment to creating moments of joy, our journey began in 1997. What started as a cozy kitchen experiment soon
-      evolved into a thriving haven for indulgence and community.</p>
-    <h4 class="about_h4_tag">{{ sub_dir_content[index]['title'] }}</h4>
-    <p class="about_p_tag">{{ sub_dir_content[index]['content'] }}</p>
-    <span class="history_crtl_span">
-      <img src="/svgs/larrow.svg" alt="" @click="index_down($event)">
-      <img src="/svgs/rarrow.svg" alt="" @click="index_up($event)">
-    </span>
+    <div class="about_divider">
+      <h3 class="about_h3_tag">Our History</h3>
+      <p class="about_init_p_tag">Welcome to the sweet tale of Freshest Bakery. Born out of a shared love for baking and a
+        commitment to creating moments of joy, our journey began in 1997. What started as a cozy kitchen experiment soon
+        evolved into a thriving haven for indulgence and community.</p>
+    </div>
+    <div class="about_divider">
+      <h4 class="about_h4_tag">{{ sub_dir_content[index]['title'] }}</h4>
+      <p class="about_p_tag">{{ sub_dir_content[index]['content'] }}</p>
+      <span class="history_crtl_span">
+        <img src="/svgs/larrow.svg" alt="" @click="index_down($event)">
+        <img src="/svgs/rarrow.svg" alt="" @click="index_up($event)">
+      </span>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { domainToUnicode } from 'url';
 import { nextTick, onBeforeUnmount, ref, onMounted, onUpdated } from 'vue';
 const index: any = ref(0);
 const sub_dir_content = [
@@ -68,16 +71,18 @@ const on_click_effect = (event: any) => {
 }
 
 const go_to_target = (title: HTMLElement) => {
-  let element_rect: DOMRect | undefined = undefined;
-  let element_y: number | undefined = undefined;
-  const offset: number = 50;
-  element_rect = title.getBoundingClientRect();
-  element_y = (window.scrollY + element_rect.top) - offset;
+  if (window.innerWidth < 770) {
+    let element_rect: DOMRect | undefined = undefined;
+    let element_y: number | undefined = undefined;
+    const offset: number = 50;
+    element_rect = title.getBoundingClientRect();
+    element_y = (window.scrollY + element_rect.top) - offset;
 
-  window.scrollTo({
-    top: element_y,
-    behavior: 'smooth',
-  })
+    window.scrollTo({
+      top: element_y,
+      behavior: 'smooth',
+    })
+  }
 }
 
 const index_down = (event: any) => {
@@ -153,30 +158,73 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   text-align: start;
-  justify-content: start;
   row-gap: 25px;
 
-  >.history_crtl_span {
+  >.about_divider {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 75%;
+    align-items: center;
+    row-gap: 25px;
+    justify-content: start;
 
-    >img {
-      width: 40px;
+    >.history_crtl_span {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 75%;
+
+      >img {
+        width: 40px;
+      }
+    }
+
+    >h3 {
+
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    >p {
+
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
   }
+}
 
-  >h3 {
+@media only screen and (min-width: 770px) {
+  .history_header {
+    >.about_divider {
+      >.history_crtl_span {
+        >img {}
+      }
 
-    padding-top: 5px;
-    padding-bottom: 5px;
+      >h3 {}
+
+      >p {}
+    }
   }
+}
 
-  >p {
+@media only screen and (min-width: 1024px) {
+  .history_header {
+    justify-content: space-between;
+    column-gap: 50px;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
-    padding-top: 5px;
-    padding-bottom: 5px;
+    >.about_divider {
+      max-width: 750px;
+
+
+      >.history_crtl_span {
+        >img {}
+      }
+
+      >h3 {}
+
+      >p {}
+    }
   }
 }
 </style>

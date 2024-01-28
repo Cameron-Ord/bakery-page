@@ -12,11 +12,24 @@
     align-items: center;
 
     >img {
-      height: 300px;
+      max-width: 350px;
+      height: 90%;
       object-fit: cover;
       transition: 0.3s ease-in-out;
       border-radius: 5px;
-      width: 100%;
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (min-width: 770px) {
+  .interval_container {
+    >.interval_item {
+      >img {
+        height: 80%;
+        width: 80%;
+        max-width: 400px;
+      }
     }
   }
 }

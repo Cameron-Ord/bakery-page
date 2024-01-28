@@ -1,17 +1,21 @@
 <template>
   <div class="ingredients_desc">
-    <h3 class="about_h3_tag">Our Ingredients</h3>
-    <p class="about_init_p_tag">At Freshest Bakery, we believe in the art of baking with passion and purpose. Every
-      delightful
-      creation that emerges from our ovens is a testament to our commitment to using only the finest, freshest
-      ingredients. We take pride in sourcing premium components that not only elevate the taste of our treats but also
-      reflect our dedication to quality.</p>
-    <h4 class="about_h4_tag">{{ sub_dir_content[index]['title'] }}</h4>
-    <p class="about_p_tag">{{ sub_dir_content[index]['content'] }}</p>
-    <span class="ingredients_ctrl_span">
-      <img src="/svgs/larrow.svg" @click="index_down($event)" alt="">
-      <img src="/svgs/rarrow.svg" @click="index_up($event)" alt="">
-    </span>
+    <div class="about_divider first">
+      <h3 class="about_h3_tag">Our Ingredients</h3>
+      <p class="about_init_p_tag">At Freshest Bakery, we believe in the art of baking with passion and purpose. Every
+        delightful
+        creation that emerges from our ovens is a testament to our commitment to using only the finest, freshest
+        ingredients. We take pride in sourcing premium components that not only elevate the taste of our treats but also
+        reflect our dedication to quality.</p>
+    </div>
+    <div class="about_divider">
+      <h4 class="about_h4_tag">{{ sub_dir_content[index]['title'] }}</h4>
+      <p class="about_p_tag">{{ sub_dir_content[index]['content'] }}</p>
+      <span class="ingredients_ctrl_span">
+        <img src="/svgs/larrow.svg" @click="index_down($event)" alt="">
+        <img src="/svgs/rarrow.svg" @click="index_up($event)" alt="">
+      </span>
+    </div>
   </div>
 </template>
 
@@ -64,15 +68,17 @@ const remove_visibility = (title: HTMLElement, desc: NodeList) => {
 }
 
 const go_to_target = (title: HTMLElement) => {
-  let element_rect = undefined;
-  let element_y = undefined;
-  const offset = 50;
-  element_rect = title.getBoundingClientRect();
-  element_y = (window.scrollY + element_rect.top) - offset;
-  window.scrollTo({
-    top: element_y,
-    behavior: 'smooth',
-  })
+  if (window.innerWidth < 770) {
+    let element_rect = undefined;
+    let element_y = undefined;
+    const offset = 50;
+    element_rect = title.getBoundingClientRect();
+    element_y = (window.scrollY + element_rect.top) - offset;
+    window.scrollTo({
+      top: element_y,
+      behavior: 'smooth',
+    })
+  }
 }
 
 const index_down = (event: any) => {
@@ -155,30 +161,81 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   text-align: start;
-  justify-content: start;
+
   row-gap: 25px;
 
-  >.ingredients_ctrl_span {
+  >.about_divider {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 75%;
+    row-gap: 25px;
+    justify-content: start;
 
-    >img {
-      width: 40px;
+    >.ingredients_ctrl_span {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 75%;
+
+      >img {
+        width: 40px;
+      }
+
+    }
+
+    >p {
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+    }
+
+    >h3 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+    }
+  }
+
+}
+
+@media only screen and (min-width: 770px) {
+  .ingredients_desc {
+    >.about_divider {
+      >.ingredients_ctrl_span {
+        >img {}
+      }
+
+      >p {}
+
+      >h3 {}
     }
 
   }
+}
 
-  >p {
-    padding-top: 5px;
-    padding-bottom: 5px;
+@media only screen and (min-width: 1024px) {
+  .ingredients_desc {
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 50px;
 
-  }
 
-  >h3 {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    >.about_divider.first {
+      max-width: 750px;
+    }
+
+    >.about_divider {
+      max-width: 750px;
+
+      >.ingredients_ctrl_span {
+        >img {}
+      }
+
+      >p {}
+
+      >h3 {}
+    }
 
   }
 }
