@@ -33,6 +33,9 @@ onBeforeUnmount(() => {
 })
 
 onMounted(() => {
+  
+
+
   let header_div: HTMLElement | null = document.querySelector('.philo_desc');
   nextTick(() => {
     setTimeout(() => {
@@ -41,6 +44,8 @@ onMounted(() => {
       }
     }, 10)
   })
+
+
 }
 )
 </script>
@@ -90,13 +95,13 @@ onMounted(() => {
 
 @media only screen and (min-width: 1024px) {
   .philo_desc {
-    flex-wrap: nowrap;
-    flex-direction: row;
-    column-gap: 50px;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    row-gap: 50px;
 
     >.about_divider {
-      max-width: 750px;
+      width: 80%;
+
 
       >h3 {}
 

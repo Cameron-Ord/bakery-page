@@ -4,9 +4,7 @@
       <h1 class="beyond_tag">Beyond the dough</h1>
       <teaser-text v-if="current_selection === 'none'"></teaser-text>
       <about-team v-if="current_selection === 'team'"></about-team>
-      <contact-us v-if="current_selection === 'contact'"></contact-us>
       <about-history v-if="current_selection === 'history'"></about-history>
-      <about-locations v-if="current_selection === 'locations'"></about-locations>
       <about-philosophy v-if="current_selection === 'philosophy'"></about-philosophy>
       <about-ingredients v-if="current_selection === 'ingredients'"></about-ingredients>
     </article>
@@ -18,9 +16,7 @@ import { nextTick, onUpdated, ref } from 'vue';
 import AboutControls from './AboutControls.vue';
 import TeaserText from './TeaserText.vue';
 import AboutTeam from './AboutTeam.vue';
-import ContactUs from './ContactUs.vue';
 import AboutHistory from './AboutHistory.vue';
-import AboutLocations from './AboutLocations.vue';
 import AboutPhilosophy from './AboutPhilosophy.vue';
 import AboutIngredients from './AboutIngredients.vue';
 const current_selection = ref('none');
@@ -33,7 +29,7 @@ onUpdated(() => {
 
   nextTick(() => {
     const beyond_tag: HTMLElement | null = document.querySelector('.beyond_tag');
-    if (beyond_tag !== null) {
+    if (beyond_tag !== null && window.innerWidth < 1024) {
       move_to_element(beyond_tag);
     }
   })

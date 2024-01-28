@@ -1,8 +1,11 @@
 <template>
   <div class="contact_desc">
-    <h3 class="about_h3_tag">Contact Us</h3>
-    <p class="about_p_tag">380-543-5903</p>
-    <p class="about_p_tag">realbakeryemail@outlook.com</p>
+    <h2 class="about_h3_tag">Contact Us</h2>
+    <article class="input_article">
+      <input class="name_input" type="text" placeholder="your name">
+      <textarea class="user_input"></textarea>
+    </article>
+    <h3>Submit</h3>
   </div>
 </template>
 
@@ -35,23 +38,38 @@ onMounted(() => {
   opacity: 0;
   transition: 0.3s ease-in-out;
   display: flex;
-  flex-direction: column;
+  align-items: start;
+  justify-items: start;
   text-align: start;
-  justify-content: start;
+  flex-direction: column;
   row-gap: 10px;
+  width: 90%;
 
-  >h3 {
-
-    padding-top: 5px;
-    padding-bottom: 5px;
-
+  >h2 {
+    padding: 10px;
   }
 
-  >p {
-    word-break: break-all;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  >h3{
+    padding: 10px;
+    cursor: pointer;
+  }
+  >.input_article {
+    padding: 10px;
+    display: flex;
+    width: 90%;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    row-gap: 25px;
 
+    >.name_input{
+      width: 65%;
+      height: 25px;
+    }
+    >.user_input{
+      width: 75%;
+      height: 100px;
+    }
   }
 }
 </style>

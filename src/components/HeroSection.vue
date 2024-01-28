@@ -6,15 +6,15 @@
     </div>
     <div class="hero_section_cto">
       <h1 @click="go_to_about" class="view_menu_tag">About us</h1>
-      <h1 @click="go_to_menu" class="view_menu_tag">View menu</h1>
+      <h1 @click="go_to_contact" class="view_menu_tag">Contact us</h1>
     </div>
   </article>
 </template>
 
 <script setup lang="ts">
 
-const go_to_menu = () => {
-  const menu_tag: HTMLElement | null = document.querySelector('.menu_section_breads');
+const go_to_contact = () => {
+  const menu_tag: HTMLElement | null = document.querySelector('.contact-location-wrapper');
   if (menu_tag !== null) {
     let element_rect: DOMRect | undefined = undefined;
     let element_y: number | undefined = undefined;
@@ -50,23 +50,12 @@ const go_to_about = () => {
 
   display: grid;
   justify-items: start;
-  align-items: center;
+  align-items: start;
+  text-align: start;
   max-width: 425px;
   width: 90%;
   row-gap: 35px;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-top: 15px;
-  padding-bottom: 15px;
   border-radius: 5px;
-
-  >.hero_image_div {
-    display: flex;
-
-    >.svg_tag {
-      width: 75px;
-    }
-  }
 
   >.hero_section_cto {
     display: flex;

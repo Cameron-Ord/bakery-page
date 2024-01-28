@@ -122,13 +122,13 @@ const show_image = (team_image: HTMLElement | null) => {
 
 @media only screen and (min-width: 1024px) {
   .our_team_desc {
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    column-gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    row-gap: 50px;
 
     >.about_divider {
-      max-width: 750px;
+      
+      width: 80%;
 
       >p {}
 

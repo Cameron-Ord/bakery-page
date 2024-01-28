@@ -1,5 +1,8 @@
 <template>
   <div class="history_header">
+    
+    <!--MOBILE-->
+    
     <div class="about_divider">
       <h3 class="about_h3_tag">Our History</h3>
       <p class="about_init_p_tag">Welcome to the sweet tale of Freshest Bakery. Born out of a shared love for baking and a
@@ -13,6 +16,21 @@
         <img src="/svgs/larrow.svg" alt="" @click="index_down($event)">
         <img src="/svgs/rarrow.svg" alt="" @click="index_up($event)">
       </span>
+    </div>
+
+    <!--DESKTOP-->
+    
+    <div class="about_divider_desktop">
+      <div class="init_seperator">
+        <h3 class="about_h3_tag">Our History</h3>
+        <p class="about_init_p_tag">Welcome to the sweet tale of Freshest Bakery. Born out of a shared love for baking and a
+        commitment to creating moments of joy, our journey began in 1997. What started as a cozy kitchen experiment soon
+        evolved into a thriving haven for indulgence and community.</p>
+      </div>
+      <div class="seperator" v-for="(item, i) in sub_dir_content" :key="i">
+        <h4 class="about_h4_tag">{{ item['title'] }}</h4>
+        <p class="about_p_tag">{{ item['content'] }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -159,14 +177,23 @@ onMounted(() => {
   flex-wrap: wrap;
   text-align: start;
   row-gap: 25px;
-
+  >.about_divider_desktop{
+    display: none;
+  }
   >.about_divider {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     row-gap: 25px;
-    justify-content: start;
-
+    justify-content: flex-start;
+    >h3 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    >p {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
     >.history_crtl_span {
       display: flex;
       flex-wrap: wrap;
@@ -176,18 +203,6 @@ onMounted(() => {
       >img {
         width: 40px;
       }
-    }
-
-    >h3 {
-
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    >p {
-
-      padding-top: 5px;
-      padding-bottom: 5px;
     }
   }
 }
@@ -208,22 +223,27 @@ onMounted(() => {
 
 @media only screen and (min-width: 1024px) {
   .history_header {
-    justify-content: space-between;
-    column-gap: 50px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    >.about_divider {
-      max-width: 750px;
-
-
-      >.history_crtl_span {
-        >img {}
+    
+    >.about_divider_desktop{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+      row-gap: 50px;
+      >.init_seperator{
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        width: 80%;
       }
 
-      >h3 {}
-
-      >p {}
+      >.seperator{
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        width: 80%;
+      }
+    }
+    >.about_divider {
+        display: none;
     }
   }
 }

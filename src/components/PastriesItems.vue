@@ -1,10 +1,8 @@
 <template>
-  <article class="menu_article">
-    <h2 class="pastries_title item_h2_tag">{{ breads[index]['Title'] }}</h2>
-    <p class="pastries_desc item_p_tag">{{ breads[index]['Desc'] }}</p>
-    <span class="control_span">
-      <img @click="index_dwn($event)" src="/svgs/larrow.svg" alt="">
-      <img @click="index_up($event)" src="/svgs/rarrow.svg" alt="">
+  <article class="menu_article" v-for="(item, i) in breads" :key="i">
+    <span class="container_span">
+      <h2 class="pastries_title item_h2_tag">{{ item['Title'] }}</h2>
+      <p class="pastries_desc item_p_tag">{{ item['Desc'] }}</p>
     </span>
   </article>
 </template>
@@ -39,69 +37,6 @@ const breads = [
     "Img": ""
   }
 ]
-
-const index_up = (event: any) => {
-
-  let bread_title: HTMLElement | null = document.querySelector('.pastries_title');
-  let bread_desc: HTMLElement | null = document.querySelector('.pastries_desc');
-
-  if (bread_title !== null && bread_desc !== null) {
-    remove_visibility(bread_title, bread_desc)
-    on_click_effect(event.target);
-  } else {
-    return
-  }
-
-  setTimeout(() => {
-    if (event.type === "click") {
-      let index_val = index.value;
-      index_val++;
-      if (index_val >= breads.length) {
-        index_val = 0;
-      }
-      index.value = index_val
-    }
-
-  }, 300);
-}
-
-const on_click_effect = (event: any) => {
-  event.style['transition'] = '0.3s ease-in-out'
-  event.style['width'] = '44px';
-  setTimeout(() => {
-    event.style['width'] = '';
-  }, 300)
-}
-
-
-const index_dwn = (event: any) => {
-  let bread_title: HTMLElement | null = document.querySelector('.pastries_title');
-  let bread_desc: HTMLElement | null = document.querySelector('.pastries_desc');
-
-  if (bread_title !== null && bread_desc !== null) {
-    remove_visibility(bread_title, bread_desc)
-    on_click_effect(event.target);
-  } else {
-    return
-  }
-
-  setTimeout(() => {
-    if (event.type === "click") {
-      let index_val = index.value;
-      index_val--;
-      if (index_val < 0) {
-        index_val = breads.length - 1;
-      }
-      index.value = index_val
-    }
-  }, 300);
-}
-
-const remove_visibility = (title: HTMLElement, desc: HTMLElement) => {
-  title.style.opacity = '0';
-  desc.style.opacity = '0';
-}
-
 onUpdated(() => {
   let bread_title: HTMLElement | null = document.querySelector('.pastries_title');
   let bread_desc: HTMLElement | null = document.querySelector('.pastries_desc');
@@ -128,29 +63,24 @@ onUpdated(() => {
   justify-items: start;
   justify-self: center;
   align-items: center;
-  width: 90%;
   text-align: start;
   row-gap: 35px;
 
-
-  >.pastries_title {
-    transition: 0.3s ease-in-out;
-  }
-
-  >.pastries_desc {
-    transition: 0.3s ease-in-out;
-  }
-
-  >.control_span {
+  >.container_span{
     display: flex;
-    flex-wrap: wrap;
-    width: 85%;
-    justify-content: space-between;
-    justify-self: center;
-
-    >img {
-      width: 40px;
+    flex-direction: column;
+    row-gap: 25px;
+    justify-content: start;
+    align-items: start;
+    width: 90%;
+    >h2 {
+      transition: 0.3s ease-in-out;
     }
+
+    >p {
+      
+      transition: 0.3s ease-in-out;
+   }
   }
 }
 </style>

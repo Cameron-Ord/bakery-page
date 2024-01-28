@@ -1,6 +1,6 @@
 <template>
   <div class="ingredients_desc">
-    <div class="about_divider first">
+    <div class="about_divider">
       <h3 class="about_h3_tag">Our Ingredients</h3>
       <p class="about_init_p_tag">At Freshest Bakery, we believe in the art of baking with passion and purpose. Every
         delightful
@@ -15,6 +15,22 @@
         <img src="/svgs/larrow.svg" @click="index_down($event)" alt="">
         <img src="/svgs/rarrow.svg" @click="index_up($event)" alt="">
       </span>
+    </div>
+
+
+    <div class="about_divider_desktop">
+      <div class="init_seperator">
+        <h3 class="about_h3_tag">Our History</h3>
+        <p class="about_init_p_tag">At Freshest Bakery, we believe in the art of baking with passion and purpose. Every
+        delightful
+        creation that emerges from our ovens is a testament to our commitment to using only the finest, freshest
+        ingredients. We take pride in sourcing premium components that not only elevate the taste of our treats but also
+        reflect our dedication to quality.</p>
+      </div>
+      <div class="seperator" v-for="(item, i) in sub_dir_content" :key="i">
+        <h4 class="about_h4_tag">{{ item['title'] }}</h4>
+        <p class="about_p_tag">{{ item['content'] }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -161,9 +177,12 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   text-align: start;
-
   row-gap: 25px;
 
+
+  >.about_divider_desktop{
+    display: none;
+  }
   >.about_divider {
     display: flex;
     align-items: center;
@@ -215,19 +234,26 @@ onMounted(() => {
 
 @media only screen and (min-width: 1024px) {
   .ingredients_desc {
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    column-gap: 50px;
+    >.about_divider_desktop{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+      row-gap: 50px;
+      >.init_seperator{
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        width: 80%;
+      }
 
-
-    >.about_divider.first {
-      max-width: 750px;
+      >.seperator{
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        width: 80%;
+      }
     }
-
     >.about_divider {
-      max-width: 750px;
-
+      display: none;
       >.ingredients_ctrl_span {
         >img {}
       }

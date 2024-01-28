@@ -30,7 +30,7 @@ body{
     border-radius: 15px;
 }
 .hero_article{
-   background-color: var(--t_white);
+
 }
 
 .text_sizing{
@@ -76,18 +76,19 @@ body{
 
 .product_header{
     text-decoration: underline 2px;
-    padding: 10px;
     color: var(--claret);
 }
 
 .item_p_tag{
-    color: var(--white);
-    padding: 10px;
+    color: var(--dp);
     border-radius: 5px;
-    background-color: var(--claret);
+    
 }
 
 .item_h2_tag{
     color: var(--dp);
-    padding: 10px;
+}
+
+.container_span{
+    
 }

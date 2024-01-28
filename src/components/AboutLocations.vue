@@ -38,20 +38,18 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   text-align: start;
+  align-items: start;
   justify-content: start;
   row-gap: 10px;
+  width: 90%;
 
   >p {
-    padding-top: 5px;
-    padding-bottom: 5px;
-
+    padding: 10px;
   }
 
   >h3 {
     word-break: break-all;
-    padding-top: 5px;
-    padding-bottom: 5px;
-
+    padding: 10px;
   }
 
 }
