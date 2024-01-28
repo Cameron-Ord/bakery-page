@@ -1,120 +1,148 @@
 <template>
-    <article class="hero_article">
-        <div class="hero_text_header">
-            <h1 class="text_header_name">Freshest Bakery</h1>
-            <p class="text_sizing">Indulge in the art of baking with our delectable creations made with love and passion.</p>
-        </div>
-        <div class="hero_section_cto">
-            <h1 class="view_menu_tag">About us</h1>
-            <h1 class="view_menu_tag">View menu</h1>
-        </div>
-    </article>
+  <article class="hero_article">
+    <div class="hero_text_header">
+      <h1 class="text_header_name">Freshest Bakery</h1>
+      <p class="text_sizing">Indulge in the art of baking with our delectable creations made with love and passion.</p>
+    </div>
+    <div class="hero_section_cto">
+      <h1 @click="go_to_about" class="view_menu_tag">About us</h1>
+      <h1 @click="go_to_menu" class="view_menu_tag">View menu</h1>
+    </div>
+  </article>
 </template>
 
 <script setup lang="ts">
 
+const go_to_menu = () => {
+  const menu_tag: HTMLElement | null = document.querySelector('.menu_section_breads');
+  if (menu_tag !== null) {
+    let element_rect: DOMRect | undefined = undefined;
+    let element_y: number | undefined = undefined;
+    element_rect = menu_tag.getBoundingClientRect();
+    element_y = (window.scrollY + element_rect.top) - 50;
+
+    window.scrollTo({
+      top: element_y,
+      behavior: 'smooth',
+    })
+  }
+}
+
+const go_to_about = () => {
+  const byond: HTMLElement | null = document.querySelector('.beyond_tag');
+  if (byond !== null) {
+    let element_rect: DOMRect | undefined = undefined;
+    let element_y: number | undefined = undefined;
+    element_rect = byond.getBoundingClientRect();
+    element_y = (window.scrollY + element_rect.top) - 50;
+
+    window.scrollTo({
+      top: element_y,
+      behavior: 'smooth',
+    })
+  }
+}
+
 </script>
 
 <style lang="scss" scoped>
+.hero_article {
 
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  max-width: 425px;
+  width: 90%;
+  row-gap: 35px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 5px;
 
+  >.hero_image_div {
+    display: flex;
 
-
-.hero_article{
-
-    display: grid;
-    justify-items: start;
-    align-items: center;
-    max-width: 425px;
-    width: 90%;
-    row-gap: 35px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 5px;
-    >.hero_image_div{
-        display: flex;
-
-        >.svg_tag{
-            width: 75px;
-        }
+    >.svg_tag {
+      width: 75px;
     }
-    >.hero_section_cto{
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 15px;
-        row-gap: 15px;
-        align-items: start;
-        row-gap: 10px;
-        >.view_menu_tag{
+  }
 
-            padding: 5.4px;
+  >.hero_section_cto {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 15px;
+    align-items: start;
+    row-gap: 10px;
 
-            border-radius: 5px;
-        }
+    >.view_menu_tag {
+
+      padding: 5.4px;
+
+      border-radius: 5px;
     }
-    >.hero_text_header{
-        display: flex;
-        flex-direction: column;
-        text-align: start;
-        align-items: start;
-  
-        row-gap: 25px;
-        >.text_header_name{
+  }
 
-            font-size: clamp(1.65rem, 2vw, 1.75rem);
-        }
-        >.text_sizing{
+  >.hero_text_header {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    align-items: start;
 
-            font-size: clamp(1.25rem, 2vw, 1.35rem);
-            font-weight: 500;
-            letter-spacing: 0.5px;        
-        }
+    row-gap: 25px;
+
+    >.text_header_name {
+
+      font-size: clamp(1.65rem, 2vw, 1.75rem);
     }
+
+    >.text_sizing {
+
+      font-size: clamp(1.25rem, 2vw, 1.35rem);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  }
 }
 
-@media only screen and (min-width: 770px){
-    .hero_article{
-        
+@media only screen and (min-width: 770px) {
+  .hero_article {
 
-        >.hero_image_div{
 
-            >.svg_tag{
+    >.hero_image_div {
 
-            }
-        }
-        >.hero_section_cto{
-            >.view_menu_tag{
-            }
-        }
-        >.hero_text_header{
-            >.text_header_name{
-            }
-            >.text_sizing{
-            }
-        }
+      >.svg_tag {}
     }
+
+    >.hero_section_cto {
+      >.view_menu_tag {}
+    }
+
+    >.hero_text_header {
+      >.text_header_name {}
+
+      >.text_sizing {}
+    }
+  }
 }
 
-@media only screen and (min-width: 1024px){
-    .hero_article{
-            >.hero_image_div{
+@media only screen and (min-width: 1024px) {
+  .hero_article {
+    >.hero_image_div {
 
-                >.svg_tag{
+      >.svg_tag {}
+    }
 
-                }
-            }
-            >.hero_section_cto{
-                >.view_menu_tag{
-                }
-            }
-            >.hero_text_header{
-                >.text_header_name{
-                }
-                >.text_sizing{
-                }
-            }
-        }
+    >.hero_section_cto {
+      >.view_menu_tag {}
+    }
+
+    >.hero_text_header {
+      >.text_header_name {}
+
+      >.text_sizing {}
+    }
+  }
 }
 </style>

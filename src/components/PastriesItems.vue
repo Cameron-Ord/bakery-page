@@ -14,24 +14,29 @@ import { nextTick, onUpdated, ref } from 'vue';
 const index = ref(0);
 const breads = [
   {
-    "Title": "Sourdough",
-    "Desc": "Savor the tangy perfection of our artisanal Sourdough Delight. Crafted through natural fermentation, bread offers a crispy crust and chewy texture. Versatile and flavorful, it's perfect with butter or paired with artisanal cheeses.",
-    "Img": "/images/pexels-marta-dzedyshko-7693924.jpg"
+    "Title": "Croissant",
+    "Desc": "Flaky layers of buttery goodness define our classic croissants. Handcrafted to perfection, these French pastries boast a golden-brown exterior that gives way to a light, airy interior. Whether enjoyed plain, filled with chocolate, or layered with almond paste, our croissants are a testament to the art of laminated dough.",
+    "Img": ""
   },
   {
-    "Title": "White bread",
-    "Desc": "Indulge in simplicity with our White Bread. Soft, fluffy, and versatile. Perfect for toasting or crafting your favorite sandwiches. Embrace the classic goodness with every bite.",
-    "Img": "/images/whitebread.jpg"
+    "Title": "Eclair",
+    "Desc": "Indulge in the elegance of our éclairs, where delicate choux pastry meets a rich, velvety filling. Each éclair is a work of art, adorned with a glossy layer of icing that adds a touch of sweetness to every bite. From traditional vanilla to inventive flavors like pistachio or passion fruit, these elongated pastries offer a symphony of textures and tastes.",
+    "Img": ""
   },
   {
-    "Title": "Whole grain bread",
-    "Desc": "Savor the wholesome goodness of our Nutty Whole Grain Bread. Packed with fiber and nutrients, it's a hearty choice for a nutritious start or a satisfying sandwich foundation.",
-    "Img": "/images/pexels-marta-dzedyshko-7693939.jpg"
+    "Title": "Danish Pastry",
+    "Desc": "Our Danish pastries are a celebration of flaky, buttery layers enveloping delectable fillings. Choose from a variety of fruit compotes, custards, or nuts nestled within the tender folds of the pastry. With a delicate glaze or dusting of powdered sugar, these pastries are a delightful combination of simplicity and sophistication.",
+    "Img": ""
   },
   {
-    "Title": "Rye bread",
-    "Desc": "Indulge in the rich amalgamation of wholesome grains found in our Rye Bread. Its nutty, tangy profile adds to its versatility, making it an ideal canvas for various spreads or a distinctive choice for your sandwich creation.",
-    "Img": "/images/pexels-nadin-sh-11214698.jpg"
+    "Title": "Palmier",
+    "Desc": "Crisp, caramelized layers of puff pastry create the enchanting spiral of our palmiers. Also known as elephant ears, these sweet, palm-shaped treats offer a satisfying crunch with every bite. The simplicity of sugar and butter allows the subtleties of the pastry's texture to shine, making them a timeless favorite.",
+    "Img": ""
+  },
+  {
+    "Title": "Cannoli",
+    "Desc": "Transport your taste buds to Italy with our cannoli, a Sicilian delight that combines a crispy shell with a luscious ricotta-based filling. Each cannoli is carefully piped and often adorned with chopped pistachios, chocolate chips, or candied fruit. These handheld treasures encapsulate the perfect balance of sweetness and richness.",
+    "Img": ""
   }
 ]
 

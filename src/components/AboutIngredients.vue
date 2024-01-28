@@ -34,6 +34,7 @@ const index_up = (event: any) => {
   if (ingred_title !== null && ingred_desc !== null) {
     remove_visibility(ingred_title, ingred_desc);
     on_click_effect(event.target);
+    go_to_target(ingred_title);
   } else {
     return
   }
@@ -61,8 +62,39 @@ const remove_visibility = (title: HTMLElement, desc: NodeList) => {
     }
   }
 }
-const index_down = (event: any) => {
 
+const go_to_target = (title: HTMLElement) => {
+  let element_rect = undefined;
+  let element_y = undefined;
+  const offset = 50;
+  element_rect = title.getBoundingClientRect();
+  element_y = (window.scrollY + element_rect.top) - offset;
+  window.scrollTo({
+    top: element_y,
+    behavior: 'smooth',
+  })
+}
+
+const index_down = (event: any) => {
+  let ingred_title: HTMLElement | null = document.querySelector('.about_h4_tag');
+  let ingred_desc: NodeList | null = document.querySelectorAll('.about_p_tag');
+  if (ingred_title !== null && ingred_desc !== null) {
+    remove_visibility(ingred_title, ingred_desc);
+    on_click_effect(event.target);
+    go_to_target(ingred_title);
+  } else {
+    return
+  }
+  setTimeout(() => {
+    if (event.type === "click") {
+      let index_val = index.value;
+      index_val--;
+      if (index_val < 0) {
+        index_val = sub_dir_content.length - 1;
+      }
+      index.value = index_val;
+    }
+  }, 300)
 }
 
 const on_click_effect = (event: any) => {

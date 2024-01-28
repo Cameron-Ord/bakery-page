@@ -14,24 +14,24 @@ import { ref, onUpdated, nextTick } from 'vue';
 const index = ref(0);
 const breads = [
   {
-    "Title": "Sourdough",
-    "Desc": "Savor the tangy perfection of our artisanal Sourdough Delight. Crafted through natural fermentation, bread offers a crispy crust and chewy texture. Versatile and flavorful, it's perfect with butter or paired with artisanal cheeses.",
-    "Img": "/images/pexels-marta-dzedyshko-7693924.jpg"
+    "Title": "Maple Pecan Praline Twist",
+    "Desc": "Embrace the flavors of fall with our Maple Pecan Praline Twist. This limited-time delight features a twisted, flaky pastry generously layered with a velvety maple glaze and studded with crunchy pecans. Every bite is a harmonious blend of warm autumn spices and the indulgent sweetness of praline, making it the perfect seasonal treat.",
+    "Img": ""
   },
   {
-    "Title": "White bread",
-    "Desc": "Indulge in simplicity with our White Bread. Soft, fluffy, and versatile. Perfect for toasting or crafting your favorite sandwiches. Embrace the classic goodness with every bite.",
-    "Img": "/images/whitebread.jpg"
+    "Title": "Citrus Blossom Danish",
+    "Desc": "Experience a burst of sunshine with our Citrus Blossom Danish. This refreshing pastry combines layers of buttery dough with a zesty citrus-infused filling, creating a delightful dance of flavors. Topped with a light citrus glaze, this Danish is a bright and invigorating choice for those craving a taste of sunshine in every bite.",
+    "Img": ""
   },
   {
-    "Title": "Whole grain bread",
-    "Desc": "Savor the wholesome goodness of our Nutty Whole Grain Bread. Packed with fiber and nutrients, it's a hearty choice for a nutritious start or a satisfying sandwich foundation.",
-    "Img": "/images/pexels-marta-dzedyshko-7693939.jpg"
+    "Title": "Dark Chocolate Raspberry Swirl Croissant",
+    "Desc": "Elevate your chocolate experience with our Dark Chocolate Raspberry Swirl Croissant. Indulge in the decadence of dark chocolate folded into layers of flaky croissant pastry, complemented by a luscious raspberry filling. The perfect balance of rich cocoa and tart raspberry creates a sumptuous treat for chocolate enthusiasts.",
+    "Img": ""
   },
   {
-    "Title": "Rye bread",
-    "Desc": "Indulge in the rich amalgamation of wholesome grains found in our Rye Bread. Its nutty, tangy profile adds to its versatility, making it an ideal canvas for various spreads or a distinctive choice for your sandwich creation.",
-    "Img": "/images/pexels-nadin-sh-11214698.jpg"
+    "Title": "Matcha Almond Bliss Éclair",
+    "Desc": "Delight in the serene flavors of our Matcha Almond Bliss Éclair. This exquisite pastry features a light choux shell filled with a velvety matcha-infused cream and topped with toasted almond slices. The earthy notes of matcha harmonize with the nutty crunch of almonds, offering a sophisticated and blissful taste experience.",
+    "Img": ""
   }
 ]
 const index_up = (event: any) => {
