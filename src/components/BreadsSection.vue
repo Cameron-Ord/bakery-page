@@ -24,17 +24,42 @@ const breads = [
 
 </script>
 <style lang="scss" scoped>
+
+.breads_article{
+    display: grid;
+    justify-items: center;
+    row-gap: 25px;
+}
+
+.bread_item{
+    display: flex;
+    align-items: start;
+    row-gap: 10px;
+    justify-content: start;
+    flex-direction: column;
+    width: 80%;
+
+    >.bread_title{
+
+    }
+    >.bread_image{
+
+    }
+    >.bread_desc{
+
+    }
+}
 .bread_image{
     width: 60%;
     height: 60%;
 }
 </style>
 <template>
-  <article>
-    <span v-for="(item, i) in breads" :key="i">
-        <h2>{{ item['Title'] }}</h2>
+  <article class="breads_article">
+    <span v-for="(item, i) in breads" :key="i" class="bread_item">
+        <h2 class="bread_title">{{ item['Title'] }}</h2>
         <img :src="item['Img']" alt="" class="bread_image">
-        <p>{{ item['Desc'] }}</p>
+        <p class="bread_desc">{{ item['Desc'] }}</p>
     </span>
   </article>
 </template>

@@ -24,17 +24,43 @@ const specials = [
 
 </script>
 <style lang="scss" scoped>
-.bread_image{
+
+.specials_article{
+    display: grid;
+    justify-items: center;
+    row-gap: 25px;
+}
+
+.special_item{
+    display: flex;
+    align-items: start;
+    row-gap: 10px;
+    justify-content: start;
+    flex-direction: column;
+    width: 80%;
+
+    >.special_title{
+
+    }
+    >.special_image{
+
+    }
+    >.special_desc{
+
+    }
+}
+
+.special_image{
     width: 60%;
     height: 60%;
 }
 </style>
 <template>
-  <article>
-    <span v-for="(item, i) in specials" :key="i">
-        <h2>{{ item['Title'] }}</h2>
-        <img :src="item['Img']" alt="" class="bread_image">
-        <p>{{ item['Desc'] }}</p>
+  <article class="specials_article">
+    <span v-for="(item, i) in specials" :key="i" class="special_item">
+        <h2 class="special_title">{{ item['Title'] }}</h2>
+        <img :src="item['Img']" alt="" class="special_image">
+        <p class="special_desc">{{ item['Desc'] }}</p>
     </span>
   </article>
 </template>

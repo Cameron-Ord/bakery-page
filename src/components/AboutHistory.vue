@@ -48,24 +48,55 @@ onBeforeMount(() => {
 
 </script>
 <style lang="scss" scoped>
+
+.about_history{
+  display: grid;
+  justify-items: center;
+}
+
+.image_span{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 80%;
+}
+
+.text_span{
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  align-items: start;
+  justify-content: start;
+  >.content_div{
+
+  }
+
+  >.history_controls_div{
+    >.controls_tag{
+
+    }
+  }
+}
+
 .about_image{
   width: 80%;
   height: auto;
 }
 </style>
 <template>
-  <article>
-    <span>
+  <article class="about_history">
+    <span class="image_span">
       <img src="/images/about1.jpg" alt="" class="about_image">
     </span>
-    <span>
-      <div>
-        <h2>Our History</h2>
-        <h3>{{ sub_dir_content[index]['title'] }}</h3>
-        <p>{{ sub_dir_content[index]['content'] }}</p>
+    <span class="text_span">
+      <div class="content_div">
+        <h2 class="history_header">Our History</h2>
+        <h3 class="hst_title">{{ sub_dir_content[index]['title'] }}</h3>
+        <p class="hst_desc">{{ sub_dir_content[index]['content'] }}</p>
       </div>
-      <div>
-        <h4 v-for="(item, i) in button_array" :key="i" @click="get_item_index($event)">{{ item['title'] }}</h4>
+      <div class="history_controls_div">
+        <h4 class="controls_tag" v-for="(item, i) in button_array" :key="i" @click="get_item_index($event)">{{ item['title'] }}</h4>
       </div>
     </span>
   </article>

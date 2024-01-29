@@ -35,6 +35,28 @@ const assign_selection = (text: string) =>{
     background-size: cover;
     background-position: 50% center;
   }
+
+  >.menu_section{
+    display: grid;
+    align-items: center;
+    row-gap: 25px;
+  }
+  >.about_teaser{
+    display: grid;
+    align-items: center;
+  }
+  >.sub_hero_images{
+    display: grid;
+    align-items: center;
+  }
+  >.contact_section{
+    display: grid;
+    align-items: center;
+  }
+  >.locations_section{
+    display: grid;
+    align-items: center;
+  }
 }
 </style>
 

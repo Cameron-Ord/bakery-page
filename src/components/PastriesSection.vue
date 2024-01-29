@@ -24,17 +24,43 @@ const pastries = [
 
 </script>
 <style lang="scss" scoped>
-.bread_image{
+
+.pastries_article{
+    display: grid;
+    justify-items: center;
+    row-gap: 25px;
+}
+
+.pastries_item{
+    display: flex;
+    align-items: start;
+    row-gap: 10px;
+    justify-content: start;
+    flex-direction: column;
+    width: 80%;
+
+    >.pastries_title{
+
+    }
+    >.pastries_image{
+
+    }
+    >.pastries_desc{
+
+    }
+}
+
+.pastries_image{
     width: 60%;
     height: 60%;
 }
 </style>
 <template>
-  <article>
-    <span v-for="(item, i) in pastries" :key="i">
-        <h2>{{ item['Title'] }}</h2>
-        <img :src="item['Img']" alt="" class="bread_image">
-        <p>{{ item['Desc'] }}</p>
+  <article class="pastries_article">
+    <span v-for="(item, i) in pastries" :key="i" class="pastries_item">
+        <h2 class="pastries_title">{{ item['Title'] }}</h2>
+        <img :src="item['Img']" alt="" class="pastries_image">
+        <p class="pastries_desc">{{ item['Desc'] }}</p>
     </span>
   </article>
 </template>

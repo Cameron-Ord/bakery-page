@@ -47,24 +47,55 @@ onBeforeMount(() => {
 
 </script>
 <style lang="scss" scoped>
+
+.about_ingred{
+  display: grid;
+  justify-items: center;
+}
+
+.image_span{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 80%;
+}
+
+.text_span{
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  align-items: start;
+  justify-content: start;
+  >.content_div{
+
+  }
+
+  >.ingred_controls_div{
+    >.controls_tag{
+
+    }
+  }
+}
+
 .about_image{
   width: 80%;
   height: auto;
 }
 </style>
 <template>
-  <article>
-    <span>
+  <article class="about_ingred">
+    <span class="image_span">
       <img src="/images/about2.jpg" alt="" class="about_image">
     </span>
-    <span>
-      <div>
+    <span class="text_span">
+      <div class="content_div">
         <h2>Our Ingredients</h2>
         <h3>{{ sub_dir_content[index]['title'] }}</h3>
         <p>{{ sub_dir_content[index]['content'] }}</p>
       </div>
-      <div>
-        <h4 v-for="(item, i) in button_array" :key="i" @click="get_item_index($event)">{{ item['title'] }}</h4>
+      <div class="ingred_controls_div">
+        <h4 class="controls_tag" v-for="(item, i) in button_array" :key="i" @click="get_item_index($event)">{{ item['title'] }}</h4>
       </div>
     </span>
   </article>
