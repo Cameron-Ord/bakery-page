@@ -54,6 +54,19 @@ const pastries = [
     width: 60%;
     height: 60%;
 }
+
+
+@media only screen and (min-width: 770px){
+  .pastries_article{
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  }
+}
+@media only screen and (min-width: 1024px){
+  .pastries_article{
+    grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+  }
+}
+
 </style>
 <template>
   <article class="pastries_article">

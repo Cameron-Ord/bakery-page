@@ -66,7 +66,6 @@ onBeforeMount(() => {
   display: flex;
   width: 80%;
   flex-direction: column;
-  align-items: center;
   align-items: start;
   justify-content: start;
   row-gap: 15px;

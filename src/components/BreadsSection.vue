@@ -52,6 +52,18 @@ const breads = [
 .bread_image{
     width: 60%;
     height: 60%;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 770px){
+  .breads_article{
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  }
+}
+@media only screen and (min-width: 1024px){
+  .breads_article{
+    grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+  }
 }
 </style>
 <template>

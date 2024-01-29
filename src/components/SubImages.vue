@@ -37,6 +37,27 @@
     width: 80%;
     height: auto;
 }
+
+@media only screen and (min-width: 770px) {
+    .media_article{
+        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    }
+    .info_span{
+        justify-content: center;
+    }
+
+    .media_image_span{
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .media_article{
+        grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+    }
+    .info_span{
+        justify-content: center;
+    } 
+}
 </style>
 <template>
     <article class="media_article">

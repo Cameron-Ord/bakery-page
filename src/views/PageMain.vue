@@ -70,6 +70,18 @@ const assign_selection = (text: string) =>{
     padding-bottom: 50px;
   }
 }
+
+@media only screen and (min-width: 770px){
+  .about_teaser{
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .about_teaser{
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  }
+}
 </style>
 
 <template>
