@@ -4,6 +4,7 @@
 .contact_article{
     display: grid;
     justify-items: center;
+    row-gap: 25px;
 }
 
 .contact_span{
@@ -12,6 +13,7 @@
     justify-content: flex-start;
     width: 80%;
     flex-direction: column;
+    row-gap: 10px;
 
     >.input_tag{
         height: 25px;

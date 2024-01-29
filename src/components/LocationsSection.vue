@@ -8,13 +8,14 @@
 
     >.locations_span{
         display: flex;
+        row-gap: 20px;
         width: 80%;
         align-items: start;
         justify-content: flex-start;
         flex-direction: column;
 
         >p{
-            
+
         }
         >h3{
 

@@ -51,6 +51,8 @@ onBeforeMount(() => {
 .about_ingred{
   display: grid;
   justify-items: center;
+  row-gap: 25px;
+
 }
 
 .image_span{
@@ -67,11 +69,21 @@ onBeforeMount(() => {
   align-items: center;
   align-items: start;
   justify-content: start;
+  row-gap: 15px;
   >.content_div{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    row-gap: 10px;
   }
 
   >.ingred_controls_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    row-gap: 10px;
     >.controls_tag{
 
     }

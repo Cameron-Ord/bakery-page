@@ -52,6 +52,7 @@ onBeforeMount(() => {
 .about_history{
   display: grid;
   justify-items: center;
+  row-gap: 25px;
 }
 
 .image_span{
@@ -68,11 +69,22 @@ onBeforeMount(() => {
   align-items: center;
   align-items: start;
   justify-content: start;
-  >.content_div{
+  row-gap: 15px;
 
+  >.content_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    row-gap: 10px;
   }
 
   >.history_controls_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    row-gap: 10px;
     >.controls_tag{
 
     }

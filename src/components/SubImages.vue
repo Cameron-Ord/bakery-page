@@ -4,10 +4,12 @@
 .media_article{
     display: grid;
     justify-items: center;
+    row-gap: 25px;
 }
 
 .info_span{
     width: 80%;
+    row-gap: 25px;
     display: flex;
     justify-content: flex-start;
     align-items: start;
