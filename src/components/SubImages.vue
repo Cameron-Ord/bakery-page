@@ -36,11 +36,12 @@
 .interval_image{
     width: 80%;
     height: auto;
+    max-width: 350px;
 }
 
 @media only screen and (min-width: 770px) {
     .media_article{
-        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     }
     .info_span{
         justify-content: center;
@@ -54,12 +55,16 @@
 }
 @media only screen and (min-width: 1024px) {
     .media_article{
-        grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     }
     .info_span{
         justify-content: center;
         align-items: center;
     } 
+
+    .interval_image{
+        max-width: 400px;
+    }
 }
 </style>
 <template>

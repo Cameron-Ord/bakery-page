@@ -47,7 +47,11 @@ onBeforeMount(() => {
 
 </script>
 <style lang="scss" scoped>
-
+.ingred_tag{
+  width: 90%;
+  max-height: 125px;
+  overflow-y: auto;
+}
 .about_ingred{
   display: grid;
   justify-items: center;
@@ -91,8 +95,9 @@ onBeforeMount(() => {
 
 .about_image{
   width: 80%;
-  height: auto;
-  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  max-width: 300px;
 }
 
 @media only screen and (min-width: 770px) {
@@ -104,7 +109,7 @@ onBeforeMount(() => {
 @media only screen and (min-width: 1024px) {
   .about_image{
     width: 80%;
-    height: 400px;
+    height: 350px;
     max-width: 350px;
     object-fit: cover;
   }
@@ -120,7 +125,7 @@ onBeforeMount(() => {
       <div class="content_div">
         <h2>Our Ingredients</h2>
         <h3>{{ sub_dir_content[index]['title'] }}</h3>
-        <p>{{ sub_dir_content[index]['content'] }}</p>
+        <p class="ingred_tag">{{ sub_dir_content[index]['content'] }}</p>
       </div>
       <div class="ingred_controls_div">
         <h4 class="controls_tag" v-for="(item, i) in button_array" :key="i" @click="get_item_index($event)">{{ item['title'] }}</h4>

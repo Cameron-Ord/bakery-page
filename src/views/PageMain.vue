@@ -73,7 +73,7 @@ const assign_selection = (text: string) =>{
 
 @media only screen and (min-width: 770px){
   .about_teaser{
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
 }
 
@@ -84,12 +84,18 @@ const assign_selection = (text: string) =>{
     >.menu_section{
       
     }
+    >.contact_section{
+      min-height: 60vh;
+    }
+    >.sub_hero_images{
+      min-height: 60vh;
+    }
     >.hero_section{
       min-height: 100vh;
     }
   }
   .about_teaser{
-    grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
 }
 </style>

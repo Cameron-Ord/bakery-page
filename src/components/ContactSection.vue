@@ -40,7 +40,7 @@
 
 @media only screen and (min-width: 770px) {
     .contact_article{
-        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     }
     .contact_span{
         justify-content: center;
@@ -53,7 +53,7 @@
 @media only screen and (min-width: 1024px) {
     
     .contact_article{
-        grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     }
     .contact_span{
         justify-content: center;
@@ -61,6 +61,10 @@
     }
     .contact_img_span{
         justify-content: center;
+    }
+
+    .interval_image{
+        max-width: 400px;
     }
 }
 </style>

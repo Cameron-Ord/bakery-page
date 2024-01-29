@@ -49,6 +49,11 @@ onBeforeMount(() => {
 </script>
 <style lang="scss" scoped>
 
+.hst_desc{
+  width: 90%;
+  max-height: 125px;
+  overflow-y: auto;
+}
 .about_history{
   display: grid;
   justify-items: center;
@@ -92,8 +97,9 @@ onBeforeMount(() => {
 
 .about_image{
   width: 80%;
-  height: auto;
-  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  max-width: 300px;
 }
 
 
@@ -106,7 +112,7 @@ onBeforeMount(() => {
 @media only screen and (min-width: 1024px) {
   .about_image{
     width: 80%;
-    height: 400px;
+    height: 350px;
     max-width: 350px;
     object-fit: cover;
   }

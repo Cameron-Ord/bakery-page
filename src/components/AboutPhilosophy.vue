@@ -5,6 +5,7 @@ const sub_dir_content = [
   { "title": "Passion for Craft", "content": "At Freshest Bakery, our philosophy is grounded in a deep passion for the craft of baking. We believe that exceptional ingredients, careful precision, and a touch of creativity are the key ingredients for crafting extraordinary treats. Each creation is a labor of love, a symphony of flavors that celebrates the artistry and joy inherent in the world of baking." },
   { "title": "Commitment to Quality", "content": "Quality is the cornerstone of our philosophy. From the moment we select our ingredients to the final presentation of our baked goods, we adhere to the highest standards. We believe that every bite should be a moment of pure pleasure, a testament to our commitment to delivering excellence in every aspect of our craft." },
   { "title": "Creativity Unleashed", "content": "Baking is an art form, and our philosophy embraces the freedom of creativity. Our talented bakers are encouraged to experiment, innovate, and push the boundaries of traditional flavors. This spirit of exploration ensures that our menu is always infused with fresh ideas and delightful surprises, offering our customers an ever-evolving experience." },
+  { "title": "Harmony of Tradition and Innovation", "content": "At Freshest Bakery, we believe in striking a harmonious balance between tradition and innovation. Our philosophy embraces the time-honored techniques that have defined the art of baking for generations, while also welcoming the spirit of innovation that keeps our offerings exciting and relevant. We cherish the classics that have stood the test of time and combine them with a fresh perspective, ensuring that every visit to our bakery is a journey through both the familiar and the wonderfully unexpected." },
 ]
 const button_array: any = ref([])
 const selection: any = ref(sub_dir_content[index.value]['title'])
@@ -47,7 +48,11 @@ onBeforeMount(() => {
 </script>
 <style lang="scss" scoped>
 
-
+.phil_p_tag{
+  width: 90%;
+  max-height: 125px;
+  overflow-y: auto;
+}
 .about_philo{
   display: grid;
   justify-items: center;
@@ -91,8 +96,9 @@ onBeforeMount(() => {
 
 .about_image{
   width: 80%;
-  height: auto;
-  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  max-width: 300px;
 }
 
 @media only screen and (min-width: 770px) {
@@ -104,7 +110,7 @@ onBeforeMount(() => {
 @media only screen and (min-width: 1024px) {
   .about_image{
     width: 80%;
-    height: 400px;
+    height: 350px;
     max-width: 350px;
     object-fit: cover;
   }
@@ -119,7 +125,7 @@ onBeforeMount(() => {
       <div class="content_div">
         <h2>Our Philosophy</h2>
         <h3>{{ sub_dir_content[index]['title'] }}</h3>
-        <p>{{ sub_dir_content[index]['content'] }}</p>
+        <p class="phil_p_tag">{{ sub_dir_content[index]['content'] }}</p>
       </div>
       <div class="philo_controls_div">
         <h4 class="philo_controls_div" v-for="(item, i) in button_array" :key="i" @click="get_item_index($event)">{{ item['title'] }}</h4>

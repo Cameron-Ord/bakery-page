@@ -57,13 +57,16 @@ const breads = [
 
 @media only screen and (min-width: 770px){
   .breads_article{
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
 }
 @media only screen and (min-width: 1024px){
   .breads_article{
-    
-    grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+    row-gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .bread_item{
+    row-gap: 25px;
   }
 }
 </style>

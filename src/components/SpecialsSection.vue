@@ -57,12 +57,13 @@ const specials = [
 
 @media only screen and (min-width: 770px){
   .specials_article{
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
 }
 @media only screen and (min-width: 1024px){
   .specials_article{
-    grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+    row-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
 }
 
