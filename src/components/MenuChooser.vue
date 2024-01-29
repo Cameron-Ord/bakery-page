@@ -16,15 +16,27 @@ const selection = (event: any) =>{
 
     >.menu_crtl_span{
         display: flex;
-        width: 90%;
+        width: 80%;
         align-items: center;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        column-gap: 25px;
+        column-gap: 10px;
         row-gap: 10px;
     }
 }
 
+@media only screen and (min-width: 770px) {
+    .crtls_article{
+        >.menu_crtl_span{
+        
+        width: 90%;
+    }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
 </style>
 <template>
     <article class="crtls_article">
