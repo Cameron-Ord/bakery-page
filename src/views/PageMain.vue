@@ -31,8 +31,9 @@ const assign_selection = (text: string) =>{
     display: grid;
     align-items: center;
     min-height: 40vh;
-    background-image: url('/images/mobile_hero.jpg');
+    background-image: url('/images/main_hero.jpg');
     background-size: cover;
+    background-position: 50% center;
   }
 }
 </style>

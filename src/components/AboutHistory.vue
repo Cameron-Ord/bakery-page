@@ -32,6 +32,7 @@ const get_item_index = (event: any) => {
   for(let i = 0; i < sub_dir_content.length; ++i){
     if(sub_dir_content[i]['title'] === title){
       item_index = (i);
+      break;
     }
   }
   if(item_index !== undefined){
@@ -55,7 +56,7 @@ onBeforeMount(() => {
 <template>
   <article>
     <span>
-      <img src="/images/example4.jpg" alt="" class="about_image">
+      <img src="/images/about1.jpg" alt="" class="about_image">
     </span>
     <span>
       <div>
