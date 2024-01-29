@@ -62,6 +62,7 @@ const breads = [
 }
 @media only screen and (min-width: 1024px){
   .breads_article{
+    
     grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
   }
 }

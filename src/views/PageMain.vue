@@ -78,8 +78,18 @@ const assign_selection = (text: string) =>{
 }
 
 @media only screen and (min-width: 1024px){
+
+  .page_main{
+   
+    >.menu_section{
+      
+    }
+    >.hero_section{
+      min-height: 100vh;
+    }
+  }
   .about_teaser{
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
   }
 }
 </style>

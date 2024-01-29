@@ -18,10 +18,13 @@
     >.input_tag{
         height: 25px;
         width: 90%;
+        max-width: 400px;
+
     }
     >.text_area{
         height: 100px;
         width: 90%;
+        max-width: 400px;
     }
 }
 .contact_img_span{
@@ -41,10 +44,24 @@
     }
     .contact_span{
         justify-content: center;
+        align-items: center;
+    }
+    .contact_img_span{
+        justify-content: center;
     }
 }
 @media only screen and (min-width: 1024px) {
     
+    .contact_article{
+        grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+    }
+    .contact_span{
+        justify-content: center;
+        align-items: center;
+    }
+    .contact_img_span{
+        justify-content: center;
+    }
 }
 </style>
 <template>

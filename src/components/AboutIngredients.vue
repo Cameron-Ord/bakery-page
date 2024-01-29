@@ -92,7 +92,24 @@ onBeforeMount(() => {
 .about_image{
   width: 80%;
   height: auto;
+  max-width: 350px;
 }
+
+@media only screen and (min-width: 770px) {
+  .about_image{
+
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .about_image{
+    width: 80%;
+    height: 400px;
+    max-width: 350px;
+    object-fit: cover;
+  }
+}
+
 </style>
 <template>
   <article class="about_ingred">

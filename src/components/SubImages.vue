@@ -44,6 +44,8 @@
     }
     .info_span{
         justify-content: center;
+        align-items: center;
+
     }
 
     .media_image_span{
@@ -56,6 +58,7 @@
     }
     .info_span{
         justify-content: center;
+        align-items: center;
     } 
 }
 </style>
