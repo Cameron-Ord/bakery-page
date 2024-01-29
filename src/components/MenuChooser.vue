@@ -18,7 +18,7 @@ const selection = (event: any) =>{
         display: flex;
         width: 90%;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         column-gap: 25px;
         row-gap: 10px;

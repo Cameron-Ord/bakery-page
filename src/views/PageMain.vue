@@ -27,7 +27,7 @@ const assign_selection = (text: string) =>{
   display: grid;
   align-items: center;
   min-height: 100vh;
-  row-gap: 50px;
+  
   >.hero_section{
     display: grid;
     align-items: center;
@@ -41,23 +41,33 @@ const assign_selection = (text: string) =>{
     display: grid;
     align-items: center;
     row-gap: 25px;
+    padding-bottom: 50px;
+
   }
   >.about_teaser{
     display: grid;
     align-items: center;
     row-gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   >.sub_hero_images{
     display: grid;
     align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   >.contact_section{
     display: grid;
     align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   >.locations_section{
     display: grid;
     align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 </style>
