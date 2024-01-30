@@ -12,7 +12,7 @@ import MenuChooser from '../components/MenuChooser.vue'
 import AboutPhilosophy from '../components/AboutPhilosophy.vue'
 import AboutIngredients from '../components/AboutIngredients.vue'
 import AboutDisplay from '../components/AboutDisplay.vue'
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 const selection = ref('Breads');
 const is_displaying = ref(false);
 let selection_data: Array<{ title: string, content: string }> | undefined;
@@ -28,9 +28,9 @@ const display_about_selection = (choice_data: Array<{ title: string, content: st
     is_displaying.value = true;
     selection_data = choice_data;
   }
-
+  
   if(element_y !== undefined){
-    saved_e_pos = element_y;
+    saved_e_pos = element_y ;
   }
 }
 
@@ -40,10 +40,11 @@ const return_data = () =>{
   }
 }
 
-const reset_about_selection = () =>{
+const reset_about_selection = async () =>{
   selection_data = undefined;
   is_displaying.value = false;
   if(saved_e_pos !== undefined){
+    await nextTick();
     window.scrollTo({
       top: saved_e_pos,
       behavior: 'instant',
@@ -57,6 +58,14 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+
+.v-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from{
+  opacity: 0;
+}
 .page_main{
   display: grid;
   align-items: center;
@@ -134,13 +143,7 @@ onMounted(() => {
   }
 }
 
-.v-enter-active {
-  transition: opacity 0.5s ease;
-}
 
-.v-enter-from{
-  opacity: 0;
-}
 </style>
 
 <template>
