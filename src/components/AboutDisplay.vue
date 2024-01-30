@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { onBeforeMount, onMounted } from 'vue';
+import { nextTick, onBeforeMount, onMounted } from 'vue';
 const {return_data, reset_about_selection} = defineProps(['return_data', 'reset_about_selection'])
-
+const emit = defineEmits(['clicked'])
 let data: Array<{title: string, content:string}>;
 
 const go_back = () => {
+    emit('clicked');
     reset_about_selection();
 }
 
@@ -12,7 +13,8 @@ onBeforeMount(() => {
     data = return_data();
 })
 
-const scroll_to_element = (e_pos: number) =>{
+const scroll_to_element = async (e_pos: number) =>{
+    await nextTick();
     window.scrollTo({
         top: e_pos,
         behavior: 'instant',

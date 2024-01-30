@@ -24,6 +24,11 @@ const assign_selection = (text: string) =>{
 }
 
 const display_about_selection = (choice_data: Array<{ title: string, content: string }>, element_y: number | undefined) =>{
+  const remove: HTMLElement | null = document.querySelector('.about_teaser')
+  if(remove){
+    remove.style['gridTemplateColumns'] = 'none';
+  }
+  
   if(choice_data.length > 0 && choice_data !== undefined) {
     is_displaying.value = true;
     selection_data = choice_data;
@@ -40,9 +45,18 @@ const return_data = () =>{
   }
 }
 
+const reset_grid=async()=>{
+  await nextTick();
+  const remove: HTMLElement | null = document.querySelector('.about_teaser')
+  if(remove){
+    remove.style['gridTemplateColumns'] = '';
+  }
+}
+
 const reset_about_selection = async () =>{
   selection_data = undefined;
   is_displaying.value = false;
+  reset_grid()
   if(saved_e_pos !== undefined){
     await nextTick();
     window.scrollTo({
@@ -51,6 +65,11 @@ const reset_about_selection = async () =>{
     });
   }
 }
+
+const handle_emit = () =>{
+
+}
+
 
 onMounted(() => {
 })
@@ -137,7 +156,7 @@ onMounted(() => {
       min-height: 100vh;
     }
     >.about_teaser{
-      min-height: 100vh;
+      
       grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     }
   }
@@ -153,9 +172,15 @@ onMounted(() => {
     </section>
     <section class="menu_section">
       <menu-chooser :assign_selection="assign_selection"></menu-chooser>
-      <breads-section v-if="selection === 'Breads'"></breads-section>
-      <pastries-section v-if="selection === 'Pastries'"></pastries-section>
-      <specials-section v-if="selection === 'Specials'"></specials-section>
+      <transition>
+        <breads-section v-if="selection === 'Breads'"></breads-section>
+      </transition>
+      <transition>
+        <pastries-section v-if="selection === 'Pastries'"></pastries-section>
+      </transition>
+      <transition>
+        <specials-section v-if="selection === 'Specials'"></specials-section>
+      </transition>
     </section>
     <section class="about_teaser">
       <transition>
@@ -179,6 +204,7 @@ onMounted(() => {
       <transition>
         <about-display 
         v-if="is_displaying" 
+        @clicked="handle_emit"
         :return_data="return_data" 
         :reset_about_selection="reset_about_selection"
         ></about-display>      
