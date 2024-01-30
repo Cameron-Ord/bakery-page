@@ -10,7 +10,6 @@ const go_back = () => {
 
 onBeforeMount(() => {
     data = return_data();
-    console.log("DISPLAY DATA: ",data)
 })
 
 const scroll_to_element = (e_pos: number) =>{

@@ -133,6 +133,14 @@ onMounted(() => {
     }
   }
 }
+
+.v-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from{
+  opacity: 0;
+}
 </style>
 
 <template>
@@ -147,23 +155,31 @@ onMounted(() => {
       <specials-section v-if="selection === 'Specials'"></specials-section>
     </section>
     <section class="about_teaser">
-      <about-history 
-      v-if="!is_displaying" 
-      :display_about_selection="display_about_selection"
-      ></about-history>
-      <about-ingredients 
-      v-if="!is_displaying" 
-      :display_about_selection="display_about_selection"
-      ></about-ingredients>
-      <about-philosophy 
-      v-if="!is_displaying" 
-      :display_about_selection="display_about_selection"
-      ></about-philosophy>
-      <about-display 
-      v-if="is_displaying" 
-      :return_data="return_data" 
-      :reset_about_selection="reset_about_selection"
-      ></about-display>
+      <transition>
+        <about-history 
+        v-if="!is_displaying" 
+        :display_about_selection="display_about_selection"
+        ></about-history>
+      </transition>
+      <transition>
+        <about-ingredients 
+        v-if="!is_displaying" 
+        :display_about_selection="display_about_selection"
+        ></about-ingredients>
+      </transition>
+      <transition>
+        <about-philosophy 
+        v-if="!is_displaying" 
+        :display_about_selection="display_about_selection"
+        ></about-philosophy>      
+      </transition>
+      <transition>
+        <about-display 
+        v-if="is_displaying" 
+        :return_data="return_data" 
+        :reset_about_selection="reset_about_selection"
+        ></about-display>      
+      </transition>
     </section>
     <section class="sub_hero_images">
       <sub-images></sub-images>

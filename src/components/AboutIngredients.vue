@@ -8,8 +8,45 @@ const sub_dir_content = [
   { "title": "Artisanal Excellence", "content": "Craftsmanship is at the heart of our bakery, and it begins with the ingredients we choose. Our skilled bakers work with precision and passion, transforming each carefully chosen component into a masterpiece of flavor. Whether it's the richness of Belgian chocolate or the delicate notes of Madagascar vanilla, our artisanal approach ensures an unparalleled taste experience." },
   { "title": "Thoughtfully Curated Selection", "content": "From gluten-free options to vegan delights, we understand that our customers have diverse preferences. That's why we thoughtfully curate our ingredient list to accommodate various dietary needs without compromising on taste. Everyone deserves a moment of joy, and we aim to provide it through our thoughtfully crafted, inclusive selections. At Freshest Bakery, we believe that great ingredients make great treats. Join us in savoring the difference that quality and care can make in every bite. Your journey into the world of exceptional flavors begins here." }
 ]
-const send_choice_data = () =>{
-  display_about_selection(sub_dir_content)
+
+const get_element_y = (target_element: HTMLElement) => {
+  const e_rect: DOMRect = target_element.getBoundingClientRect();
+  const e_pos: number = (window.scrollY + e_rect.top) - 50;
+  return e_pos;
+}
+
+
+const define_element = (target_element: EventTarget | null) => {
+  if(target_element instanceof HTMLElement){
+    const parent:HTMLElement | null = target_element.parentElement;
+    let siblings: Array<Element | null> = [];
+    if(parent !== null){
+      siblings = Array.from(parent.children);
+      for(let i = 0; i < siblings.length; ++i){
+        const element: Element | null = siblings[i];
+        if(element !== null && element.hasAttribute('image_attr')){
+          return element;
+        }
+      }
+    }
+    return undefined;
+  } 
+  return undefined;
+}
+
+const send_choice_data = (target_element: EventTarget | null) =>{
+  
+  let element_y: number | undefined;
+  const html_element: Element | undefined = define_element(target_element);
+  if(html_element instanceof HTMLElement){
+    element_y = get_element_y(html_element);
+  }
+    
+  if(element_y !== undefined){
+    display_about_selection(sub_dir_content, element_y);
+  } else {
+    display_about_selection(sub_dir_content, undefined);
+  }
 }
 
 onBeforeMount(() => {
@@ -30,20 +67,14 @@ onBeforeMount(() => {
   width: 80%;
   flex-direction: column;
   align-items: start;
+  text-align: start;
   justify-content: start;
-  row-gap: 25px;
-  >.content_div{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: start;
-    row-gap: 10px;
-  }
+  row-gap: 10px;
   >.about_image{
       width: 100%;
       height: 300px;
       object-fit: cover;
-    }
+  }
 
 }
 
@@ -59,20 +90,15 @@ onBeforeMount(() => {
   .about_image{
     height: 350px;
   }
-  .ingred_tag{
-    letter-spacing: 0.5px;
-  }
 }
 
 </style>
 <template>
   <article class="about_ingred">
     <span class="text_span">
-      <img src="/images/about2.jpg" alt="" class="about_image">
-      <div class="content_div">
-        <h2>Our Ingredients</h2>
-        <h3 @click="send_choice_data">View</h3>
-      </div>
+      <img src="/images/about2.jpg" alt="" image_attr class="about_image">
+      <h2>Our Ingredients</h2>
+      <h3 @click="send_choice_data($event.target)">View</h3>
     </span>
   </article>
 </template>
