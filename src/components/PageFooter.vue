@@ -7,16 +7,17 @@
 
 .name_span{
     display: flex;
-    align-items: start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     width: 80%;
+    text-align: center;
 }
 
 .socials_span{
     display: flex;
-    align-items: start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 25px;
     row-gap: 10px;

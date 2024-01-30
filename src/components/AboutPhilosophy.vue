@@ -1,70 +1,27 @@
 <script setup lang="ts">
-import {ref, onBeforeMount} from 'vue'
-const index: any = ref(0);
+import {onBeforeMount} from 'vue'
+const { display_about_selection } = defineProps(['display_about_selection'])
+
 const sub_dir_content = [
   { "title": "Passion for Craft", "content": "At Freshest Bakery, our philosophy is grounded in a deep passion for the craft of baking. We believe that exceptional ingredients, careful precision, and a touch of creativity are the key ingredients for crafting extraordinary treats. Each creation is a labor of love, a symphony of flavors that celebrates the artistry and joy inherent in the world of baking." },
   { "title": "Commitment to Quality", "content": "Quality is the cornerstone of our philosophy. From the moment we select our ingredients to the final presentation of our baked goods, we adhere to the highest standards. We believe that every bite should be a moment of pure pleasure, a testament to our commitment to delivering excellence in every aspect of our craft." },
   { "title": "Creativity Unleashed", "content": "Baking is an art form, and our philosophy embraces the freedom of creativity. Our talented bakers are encouraged to experiment, innovate, and push the boundaries of traditional flavors. This spirit of exploration ensures that our menu is always infused with fresh ideas and delightful surprises, offering our customers an ever-evolving experience." },
   { "title": "Harmony of Tradition and Innovation", "content": "At Freshest Bakery, we believe in striking a harmonious balance between tradition and innovation. Our philosophy embraces the time-honored techniques that have defined the art of baking for generations, while also welcoming the spirit of innovation that keeps our offerings exciting and relevant. We cherish the classics that have stood the test of time and combine them with a fresh perspective, ensuring that every visit to our bakery is a journey through both the familiar and the wonderfully unexpected." },
 ]
-const button_array: any = ref([])
-const selection: any = ref(sub_dir_content[index.value]['title'])
 
-const pop_array = () => {
-  button_array.value.pop();
-  if(button_array.value.length > 0){
-    pop_array();
-  }
+const send_choice_data = () =>{
+  display_about_selection(sub_dir_content)
 }
-const create_button_array = () => {
-  pop_array();
-  for(let i = 0; i < sub_dir_content.length; ++i){
-    const title = sub_dir_content[i]['title']
-    if(selection.value !== title){
-      button_array.value.push(sub_dir_content[i])
-    }
-  }
-}
-const get_item_index = (event: any) => {
-  const title = event.target.innerText;
-  let item_index: number | undefined;
-  for(let i = 0; i < sub_dir_content.length; ++i){
-    if(sub_dir_content[i]['title'] === title){
-      item_index = (i);
-      break;
-    }
-  }
-  if(item_index !== undefined){
-    index.value = item_index;
-    selection.value = sub_dir_content[index.value]['title'];
-    create_button_array();
-  }
-}
-
 onBeforeMount(() => {
-  create_button_array();
+
 })
 
 </script>
 <style lang="scss" scoped>
 
-.phil_p_tag{
-  width: 90%;
-  max-height: 125px;
-  overflow-y: auto;
-}
 .about_philo{
   display: grid;
   justify-items: center;
-  row-gap: 25px;
-
-}
-
-.image_span{
-  display: flex;
-  align-items: start;
-  justify-content: start;
-  width: 80%;
 }
 
 .text_span{
@@ -73,7 +30,12 @@ onBeforeMount(() => {
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  row-gap: 15px;
+  row-gap: 25px;
+  >.about_image{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
   >.content_div{
     display: flex;
     flex-direction: column;
@@ -82,24 +44,9 @@ onBeforeMount(() => {
     row-gap: 10px;
   }
 
-  >.philo_controls_div{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: start;
-    row-gap: 10px;
-    >.controls_tag{
-
-    }
-  }
 }
 
-.about_image{
-  width: 80%;
-  height: 300px;
-  object-fit: cover;
-  max-width: 300px;
-}
+
 
 @media only screen and (min-width: 770px) {
   .about_image{
@@ -109,26 +56,17 @@ onBeforeMount(() => {
 
 @media only screen and (min-width: 1024px) {
   .about_image{
-    width: 80%;
     height: 350px;
-    max-width: 350px;
-    object-fit: cover;
   }
 }
 </style>
 <template>
   <article class="about_philo">
-    <span class="image_span">
-      <img src="/images/about3.jpg" alt="" class="about_image">
-    </span>
     <span class="text_span">
+      <img src="/images/about3.jpg" alt="" class="about_image">
       <div class="content_div">
         <h2>Our Philosophy</h2>
-        <h3>{{ sub_dir_content[index]['title'] }}</h3>
-        <p class="phil_p_tag">{{ sub_dir_content[index]['content'] }}</p>
-      </div>
-      <div class="philo_controls_div">
-        <h4 class="philo_controls_div" v-for="(item, i) in button_array" :key="i" @click="get_item_index($event)">{{ item['title'] }}</h4>
+        <h3 @click="send_choice_data">View</h3>
       </div>
     </span>
   </article>

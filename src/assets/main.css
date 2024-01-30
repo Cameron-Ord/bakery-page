@@ -8,6 +8,7 @@ p{
     font-size: clamp(1rem, 2vw, 1.2rem);
     padding: 0px;
     margin: 0px;
+    text-align: start;
 }
 h1{
     font-family:'Times New Roman', Times, serif;

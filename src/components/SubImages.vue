@@ -11,26 +11,26 @@
     width: 80%;
     row-gap: 25px;
     display: flex;
-    justify-content: flex-start;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     >h2{
-
+        text-align: center;
     }
     >.media_container{
         display: flex;
         flex-wrap: wrap;
-        align-items: start;
+        align-items: center;
         column-gap: 15px;
         row-gap: 10px;
-        justify-content: flex-start;
+        justify-content: center;
     }
 }
 
 .media_image_span{
     display: flex;
-    align-items: start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     width: 80%;
 }
 .interval_image{

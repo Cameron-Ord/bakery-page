@@ -11,14 +11,48 @@ import SubImages from '../components/SubImages.vue'
 import MenuChooser from '../components/MenuChooser.vue'
 import AboutPhilosophy from '../components/AboutPhilosophy.vue'
 import AboutIngredients from '../components/AboutIngredients.vue'
-import { ref } from 'vue';
+import AboutDisplay from '../components/AboutDisplay.vue'
+import { ref, onMounted } from 'vue';
 const selection = ref('Breads');
-
+const is_displaying = ref(false);
+let selection_data: Array<{ title: string, content: string }> | undefined;
+let saved_e_pos: number | undefined;
 
 const assign_selection = (text: string) =>{
   selection.value = "";
   selection.value += text;
 }
+
+const display_about_selection = (choice_data: Array<{ title: string, content: string }>, element_y: number | undefined) =>{
+  if(choice_data.length > 0 && choice_data !== undefined) {
+    is_displaying.value = true;
+    selection_data = choice_data;
+  }
+
+  if(element_y !== undefined){
+    saved_e_pos = element_y;
+  }
+}
+
+const return_data = () =>{
+  if(selection_data !== undefined && selection_data.length > 0){
+    return selection_data;
+  }
+}
+
+const reset_about_selection = () =>{
+  selection_data = undefined;
+  is_displaying.value = false;
+  if(saved_e_pos !== undefined){
+    window.scrollTo({
+      top: saved_e_pos,
+      behavior: 'instant',
+    });
+  }
+}
+
+onMounted(() => {
+})
 
 </script>
 
@@ -85,17 +119,18 @@ const assign_selection = (text: string) =>{
       
     }
     >.contact_section{
-      min-height: 60vh;
+      min-height: 50vh;
     }
     >.sub_hero_images{
-      min-height: 60vh;
+      min-height: 50vh;
     }
     >.hero_section{
       min-height: 100vh;
     }
-  }
-  .about_teaser{
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    >.about_teaser{
+      min-height: 100vh;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
   }
 }
 </style>
@@ -112,9 +147,23 @@ const assign_selection = (text: string) =>{
       <specials-section v-if="selection === 'Specials'"></specials-section>
     </section>
     <section class="about_teaser">
-      <about-history></about-history>
-      <about-ingredients></about-ingredients>
-      <about-philosophy></about-philosophy>
+      <about-history 
+      v-if="!is_displaying" 
+      :display_about_selection="display_about_selection"
+      ></about-history>
+      <about-ingredients 
+      v-if="!is_displaying" 
+      :display_about_selection="display_about_selection"
+      ></about-ingredients>
+      <about-philosophy 
+      v-if="!is_displaying" 
+      :display_about_selection="display_about_selection"
+      ></about-philosophy>
+      <about-display 
+      v-if="is_displaying" 
+      :return_data="return_data" 
+      :reset_about_selection="reset_about_selection"
+      ></about-display>
     </section>
     <section class="sub_hero_images">
       <sub-images></sub-images>

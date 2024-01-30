@@ -33,12 +33,12 @@ const breads = [
 
 .bread_item{
     display: flex;
-    align-items: start;
+    align-items: center;
     row-gap: 10px;
-    justify-content: start;
+    justify-content: center;
     flex-direction: column;
     width: 80%;
-
+    
     >.bread_title{
 
     }
@@ -46,12 +46,12 @@ const breads = [
 
     }
     >.bread_desc{
-
+      
     }
 }
 .bread_image{
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: auto;
     object-fit: cover;
 }
 

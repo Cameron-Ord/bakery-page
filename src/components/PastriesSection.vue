@@ -33,9 +33,9 @@ const pastries = [
 
 .pastries_item{
     display: flex;
-    align-items: start;
+    align-items: center;
     row-gap: 10px;
-    justify-content: start;
+    justify-content: center;
     flex-direction: column;
     width: 80%;
 
@@ -51,8 +51,8 @@ const pastries = [
 }
 
 .pastries_image{
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: auto;
 }
 
 

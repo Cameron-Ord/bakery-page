@@ -9,8 +9,9 @@
 
 .contact_span{
     display: flex;
-    align-items: start;
-    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     width: 80%;
     flex-direction: column;
     row-gap: 10px;
@@ -29,8 +30,8 @@
 }
 .contact_img_span{
     display: flex;
-    align-items: start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     width: 80%;
 }
 .interval_image{
