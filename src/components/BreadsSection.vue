@@ -28,15 +28,15 @@ const breads = [
 .breads_article{
     display: grid;
     justify-items: center;
-    row-gap: 25px;
+    row-gap: 50px;
 }
 
 .bread_item{
-    display: flex;
+    display: grid;
     align-items: center;
-    row-gap: 10px;
-    justify-content: center;
-    flex-direction: column;
+    row-gap: 25px;
+    justify-items: start;
+    
     width: 80%;
     
     >.bread_title{
@@ -59,14 +59,20 @@ const breads = [
   .breads_article{
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
+
+  .bread_item{
+    row-gap: 0px;
+    grid-template-rows: 75px 1fr 1.25fr;
+  }
 }
 @media only screen and (min-width: 1024px){
   .breads_article{
-    row-gap: 60px;
+    row-gap: 50px;
+    
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
   .bread_item{
-    row-gap: 25px;
+    grid-template-rows: 75px 1fr 1fr;
   }
 }
 </style>

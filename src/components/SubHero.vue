@@ -49,13 +49,9 @@
 </script>
 <style lang="scss" scoped>
 .hero_article{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: flex-start;
-  row-gap: 25px;
-  margin-left: 50px;
-  
+  display: grid;
+  justify-items: center;
+  row-gap: 50px;
 }
 
 .hero_intro_span{
@@ -63,15 +59,17 @@
   align-items: start;
   justify-content: flex-start;
   flex-direction: column;
- 
+  width: 80%;
   row-gap: 10px;
 }
 .hero_cta{
   display: flex;
   align-items: start;
-  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 12.5px;
   row-gap: 10px;
-
+  width: 80%;
 }
 
 @media only screen and (min-width: 770px) {
@@ -109,6 +107,7 @@
     column-gap: 60px;
   }
 }
+
 </style>
 <template>
   <article class="hero_article">

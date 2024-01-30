@@ -9,10 +9,12 @@ const selection = (event: any) =>{
 </script>
 <style lang="scss" scoped>
 .crtls_article{
+    
+    
     display:grid;
     justify-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     >.menu_crtl_span{
         display: flex;

@@ -54,8 +54,8 @@ onMounted(() => {
     >.back_btn_div{
         display: flex;
         width: 80%;
-        justify-content: flex-start;
-        align-items: start;
+        justify-content: center;
+        align-items:center;
     }
 }
 

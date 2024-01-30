@@ -28,18 +28,16 @@ const specials = [
 .specials_article{
     display: grid;
     justify-items: center;
-    row-gap: 25px;
+    row-gap: 50px;
 }
 
 .special_item{
-    display: flex;
+    display: grid;
     align-items: center;
-    row-gap: 10px;
-    justify-content: center;
-    flex-direction: column;
+    row-gap: 25px;
+    justify-items: start;   
     width: 80%;
-
-    >.special_title{
+     >.special_title{
 
     }
     >.special_image{
@@ -59,8 +57,15 @@ const specials = [
   .specials_article{
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
+  .special_item{
+    row-gap: 0px;
+    grid-template-rows: 75px 1fr 1.5fr;
+  }
 }
 @media only screen and (min-width: 1024px){
+  .special_item{
+    grid-template-rows: 75px 1fr 1fr;
+  }
   .specials_article{
     row-gap: 50px;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));

@@ -28,16 +28,16 @@ const pastries = [
 .pastries_article{
     display: grid;
     justify-items: center;
-    row-gap: 25px;
+    row-gap: 50px;
 }
 
 .pastries_item{
-    display: flex;
+    display: grid;
     align-items: center;
-    row-gap: 10px;
-    justify-content: center;
-    flex-direction: column;
+    row-gap: 25px;
+    justify-items: start;
     width: 80%;
+ 
 
     >.pastries_title{
 
@@ -60,8 +60,15 @@ const pastries = [
   .pastries_article{
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
+  .pastries_item{
+    row-gap: 0px;
+    grid-template-rows: 75px 1fr 1.5fr;
+  }
 }
 @media only screen and (min-width: 1024px){
+   .pastries_item{
+      grid-template-rows: 75px 1fr 1fr;
+    }
   .pastries_article{
     row-gap: 50px;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));

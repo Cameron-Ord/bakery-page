@@ -1,18 +1,72 @@
 :root{
-    --t_white: rgba(255, 255, 255, 0.65); 
-    --mint_green: #E5FCF5;
-    --celadon: #B3DEC1;
-    --dp: #210124;
-    --claret: #750D37;    
-    --white: #FFFFFF;
-
-    --indigo: #9381FF;
-    --peri: #B8B8FF;
-    --ghost_white: #F8F7FF;
-    --ant_white: #FFEEDD;
-    --apricot: #FFD8BE;
+    --gray: #636162;
+    --magenta: #DC45C9;
+    --pink: #FF87D8;
+    --bg: #FFD9EE;
+    --celadon: #BCE4B5;
 }
 
 body{
-    background-color: var(--white);
+
+}
+.hero_article{
+    padding: 25px;
+
+    border-radius: 7.5px;
+}
+.about_image{
+    border-radius: 10px;
+}
+
+.interval_image{
+    border-radius: 10px;
+}
+.hero_h1{
+   
+}
+.hero_h2{
+    
+  
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.hero_h3{
+
+ 
+    cursor: pointer;
+    text-decoration: underline 1px;
+}
+.bread_title{
+}
+.bread_desc{
+}
+.menu_section{
+}
+
+.crtls_article{
+}
+.menu_crtl_tag{
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+}
+
+.bread_item{
+}
+.text_span{
+    padding-bottom:18px;
+    padding-top:18px;
+    padding-left:12px;
+    padding-right:12px;
+    border-radius: 7.5px;
+}
+.bread_image{
+    border-radius: 10px;
 }

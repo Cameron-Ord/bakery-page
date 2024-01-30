@@ -93,6 +93,7 @@ onMounted(() => {
   >.hero_section{
     display: grid;
     align-items: center;
+    justify-items: start;
     min-height: 40vh;
     background-image: url('/images/main_hero.jpg');
     background-size: cover;
@@ -100,6 +101,7 @@ onMounted(() => {
   }
 
   >.menu_section{
+    
     display: grid;
     align-items: center;
     row-gap: 25px;
