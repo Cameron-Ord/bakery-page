@@ -1,65 +1,48 @@
 :root{
     --gray: #636162;
-    --magenta: #DC45C9;
-    --pink: #FF87D8;
-    --bg: #FFD9EE;
-    --celadon: #BCE4B5;
+    --sage: #BBC7A4;
+    --timber: #D6DBD2;
+    --gunmetal: #2C363F;
+    --blush: #E75A7C;
+    --white: #F2F5EA;
+    --night: #181F25;
+    --t_white: rgba(255, 255, 255, 0.10);
 }
 
 body{
-
+    background-color: var(--white);
 }
 .hero_article{
-    padding: 25px;
-
+    background-color: var(--t_white);
+    padding: 20px;
     border-radius: 7.5px;
-}
-.about_image{
-    border-radius: 10px;
+    border: solid var(--white) 5px;
+
 }
 
-.interval_image{
-    border-radius: 10px;
+.hero_cta{
+    
 }
 .hero_h1{
-   
+   color: var(--blush);
 }
 .hero_h2{
-    
-  
     border-radius: 10px;
     padding-top: 4px;
     padding-right: 10px;
     padding-bottom: 4px;
     padding-left: 10px;
     cursor: pointer;
+    color: var(--white);
+    background-color: var(--blush);
 }
 
 .hero_h3{
-
- 
+    color: var(--white);
     cursor: pointer;
     text-decoration: underline 1px;
 }
-.bread_title{
-}
-.bread_desc{
-}
-.menu_section{
-}
 
-.crtls_article{
-}
-.menu_crtl_tag{
-    border-radius: 10px;
-    padding-top: 4px;
-    padding-right: 10px;
-    padding-bottom: 4px;
-    padding-left: 10px;
-}
-
-.bread_item{
-}
 .text_span{
     padding-bottom:18px;
     padding-top:18px;
@@ -67,6 +50,181 @@ body{
     padding-right:12px;
     border-radius: 7.5px;
 }
-.bread_image{
+
+.text_span>h2{
+    color: var(--white);
+}
+
+.text_span>h3{
     border-radius: 10px;
+    color: var(--blush);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 7px;
+    padding-left: 7px;
+    border:solid var(--blush) 2px;
+    cursor: pointer;
+}
+
+
+/*ABOUT ELEMENTS*/
+.about_teaser{
+    border-top: solid var(--blush) 5px;
+    border-bottom: solid var(--blush) 5px;
+    background-color: var(--night);
+}
+
+/*ABOUT DISPLAY*/
+.text_title{
+    color: var(--blush);
+}
+.text_content{
+    color: var(--white);
+}
+.back_btn{
+    color: var(--blush);
+    text-decoration: underline 1px;
+    cursor: pointer;
+}
+/*---MENU ELEMENTS---*/
+.menu_section{
+
+}
+.crtls_article{
+    border-top: solid var(--blush) 5px;
+}
+
+
+.menu_crtl_tag{
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    color: var(--blush);
+    border: solid var(--blush) 2px;
+    cursor: pointer;
+}
+
+/*BREAD*/
+.bread_title{
+    color: var(--gunmetal);
+}
+.bread_desc{
+    width: 90%;
+    padding: 5px;
+    color: var(--gunmetal);
+}
+.bread_item{
+}
+.bread_image{
+    border: solid var(--blush) 5px;
+    border-radius: 10px;
+}
+/*PASTRIES*/
+.pastries_title{
+    color: var(--gunmetal);
+}
+.pastries_desc{
+    width: 90%;
+    padding: 5px;
+    color: var(--gunmetal);
+}
+.pastries_item{
+}
+.pastries_image{
+   
+    border: solid var(--blush) 5px;
+    border-radius: 10px;
+}
+/*SPECIALS*/
+.special_title{
+    color: var(--gunmetal);
+}
+.special_desc{
+    width: 90%;
+    padding: 5px;
+    color: var(--gunmetal);
+}
+.special_item{
+}
+.special_image{
+    border: solid var(--blush) 5px;
+    border-radius: 10px;
+}
+
+/*---IMAGES---*/
+
+.about_image{
+    border: solid var(--white) 5px;
+    border-radius: 10px;
+}
+.interval_image{
+    border-radius: 10px;
+    border: solid var(--blush) 5px;
+}
+
+.svg_tag{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*OTHER*/
+
+.input_tag{
+    padding: 3px;
+    border-radius: 5px;
+    color: var(--night);
+    background-color: var(--white);
+    border-width: 0px;
+}
+.text_area{
+    padding: 3px;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--night);
+
+}
+
+.info_span{
+
+}
+
+.info_span>h2{
+    color: var(--gunmetal);
+}
+.contact_section{
+    border-top: solid var(--blush) 5px;
+    background-color: var(--night);
+}
+.contact_span{
+    
+}
+
+.contact_span>h1{
+    
+    color: var(--blush);
+}
+
+
+.locations_section{
+    background-color: var(--night);
+}
+.locations_span>h3{
+    font-size: 1.5em;
+    color: var(--blush);
+}
+.location_wrapper>p{
+    color: var(--white);
+}
+.name_span>h2{
+    color: var(--blush);
+}
+.name_span>h3{
+    color: var(--white);
+}
+.page_footer{
+    background-color: var(--night);
 }

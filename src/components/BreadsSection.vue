@@ -35,7 +35,7 @@ const breads = [
     display: grid;
     align-items: center;
     row-gap: 25px;
-    justify-items: start;
+    justify-items: center;
     
     width: 80%;
     
@@ -50,25 +50,24 @@ const breads = [
     }
 }
 .bread_image{
-    width: 100%;
+    width: 90%;
     height: auto;
-    object-fit: cover;
+ 
 }
 
 @media only screen and (min-width: 770px){
   .breads_article{
+    row-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
 
   .bread_item{
     row-gap: 0px;
-    grid-template-rows: 75px 1fr 1.25fr;
+    grid-template-rows: 75px 1fr 1.05fr;
   }
 }
 @media only screen and (min-width: 1024px){
   .breads_article{
-    row-gap: 50px;
-    
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
   .bread_item{

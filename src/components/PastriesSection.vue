@@ -35,7 +35,7 @@ const pastries = [
     display: grid;
     align-items: center;
     row-gap: 25px;
-    justify-items: start;
+    justify-items: center;
     width: 80%;
  
 
@@ -51,13 +51,14 @@ const pastries = [
 }
 
 .pastries_image{
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
 
 @media only screen and (min-width: 770px){
   .pastries_article{
+    row-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
   .pastries_item{
@@ -70,7 +71,6 @@ const pastries = [
       grid-template-rows: 75px 1fr 1fr;
     }
   .pastries_article{
-    row-gap: 50px;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
 }

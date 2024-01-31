@@ -54,8 +54,7 @@
   align-items: start;
   justify-content: flex-start;
   row-gap: 25px;
-  margin-left: 50px;
-  
+  width: 70%;
 }
 
 .hero_intro_span{
@@ -75,6 +74,12 @@
 }
 
 @media only screen and (min-width: 770px) {
+
+  .hero_article{
+    width: auto;
+    row-gap: 35px;
+    margin-left: 50px;
+  }
   .hero_h1{
     font-size: clamp(2rem, 2vw, 3rem);
     
@@ -106,7 +111,13 @@
     font-size: clamp(1.5rem, 2vw, 2rem);
   }
   .hero_cta{
-    column-gap: 60px;
+    row-gap: 20px;
+  }
+
+  .hero_article{
+    width: auto;
+    row-gap: 35px;
+    margin-left: 100px;
   }
 }
 </style>

@@ -19,17 +19,15 @@ const scroll_to_element = async (e_pos: number) =>{
         top: e_pos,
         behavior: 'instant',
     });
+
 }
 
 onMounted(() => {
-    const title_nl: NodeList | null = document.querySelectorAll('.text_title');
-    if(title_nl !== null){
-        const first_element: Node = title_nl[0];
-        if(first_element instanceof HTMLElement){
-            const element_rect: DOMRect = first_element.getBoundingClientRect();
-            const element_y: number = (window.scrollY + element_rect.top) - 50;
-            scroll_to_element(element_y);
-        }
+    const title_nl: Element | null = document.querySelector('.about_teaser');
+    if(title_nl instanceof HTMLElement){
+        const element_rect: DOMRect = title_nl.getBoundingClientRect();
+        const element_y: number = (window.scrollY + element_rect.top) - 100;
+        scroll_to_element(element_y);
     }
 })
 

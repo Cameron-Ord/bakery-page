@@ -14,22 +14,30 @@ const mounted = ref(false);
 
 const get_element_y = (target_element: HTMLElement) => {
   const e_rect: DOMRect = target_element.getBoundingClientRect();
-  const e_pos: number = (window.scrollY + e_rect.top) - 50;
+  const e_pos: number = (window.scrollY + e_rect.top) - 100;
   return e_pos;
 }
 
 
+
 const define_element = (target_element: EventTarget | null) => {
   if(target_element instanceof HTMLElement){
-    const parent:HTMLElement | null = target_element.parentElement;
-    let siblings: Array<Element | null> = [];
-    if(parent !== null){
-      siblings = Array.from(parent.children);
-      for(let i = 0; i < siblings.length; ++i){
-        const element: Element | null = siblings[i];
-        if(element !== null && element.hasAttribute('image_attr')){
-          return element;
+    if(window.innerWidth < 1024){
+      const parent:HTMLElement | null = target_element.parentElement;
+      let siblings: Array<Element | null> = [];
+      if(parent !== null){
+        siblings = Array.from(parent.children);
+        for(let i = 0; i < siblings.length; ++i){
+          const element: Element | null = siblings[i];
+          if(element !== null && element.hasAttribute('image_attr')){
+            return element;
+          }
         }
+      }
+    } else {
+      const element: Element | null = document.querySelector('.about_teaser');
+      if(element !== null){
+        return element;
       }
     }
     return undefined;
@@ -90,12 +98,12 @@ onUpdated(() => {
   display: flex;
   width: 80%;
   flex-direction: column;
-  align-items: start;
-  text-align: start;
-  justify-content: start;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   row-gap: 10px;
   >.about_image{
-    width: 100%;
+    width: 90%;
     height: 300px;
     object-fit: cover;
   }

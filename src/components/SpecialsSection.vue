@@ -35,7 +35,7 @@ const specials = [
     display: grid;
     align-items: center;
     row-gap: 25px;
-    justify-items: start;   
+    justify-items: center;   
     width: 80%;
      >.special_title{
 
@@ -49,12 +49,13 @@ const specials = [
 }
 
 .special_image{
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
 @media only screen and (min-width: 770px){
   .specials_article{
+    row-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
   .special_item{
@@ -67,7 +68,6 @@ const specials = [
     grid-template-rows: 75px 1fr 1fr;
   }
   .specials_article{
-    row-gap: 50px;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
 }

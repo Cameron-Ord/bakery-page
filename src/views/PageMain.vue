@@ -79,8 +79,9 @@ onMounted(() => {
 <style lang="scss" scoped>
 
 .v-enter-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.8s ease;
 }
+
 
 .v-enter-from{
   opacity: 0;
@@ -93,11 +94,11 @@ onMounted(() => {
   >.hero_section{
     display: grid;
     align-items: center;
-    justify-items: start;
+    justify-items: center;
     min-height: 40vh;
-    background-image: url('/images/main_hero.jpg');
+    background-image: url('/images/croissant_hero.jpg');
     background-size: cover;
-    background-position: 50% center;
+    background-position: 50% 50%;
   }
 
   >.menu_section{
@@ -136,6 +137,13 @@ onMounted(() => {
 }
 
 @media only screen and (min-width: 770px){
+
+  .page_main{
+
+    >.hero_section{
+      justify-items: start;
+    }
+  }
   .about_teaser{
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   }
@@ -158,7 +166,7 @@ onMounted(() => {
       min-height: 100vh;
     }
     >.about_teaser{
-      
+      min-height: 70vh;
       grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     }
   }
