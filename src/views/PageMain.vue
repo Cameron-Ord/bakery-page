@@ -95,7 +95,7 @@ onMounted(() => {
     display: grid;
     align-items: center;
     justify-items: center;
-    min-height: 40vh;
+    min-height: 425px;
     background-image: url('/images/croissant_hero.jpg');
     background-size: cover;
     background-position: 50% 50%;
@@ -142,6 +142,7 @@ onMounted(() => {
 
     >.hero_section{
       justify-items: start;
+      min-height: 500px;
     }
   }
   .about_teaser{
