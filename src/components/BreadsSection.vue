@@ -36,7 +36,7 @@ const breads = [
     align-items: center;
     row-gap: 25px;
     justify-items: center;
-    
+    text-align: center;
     width: 80%;
     
     >.bread_title{

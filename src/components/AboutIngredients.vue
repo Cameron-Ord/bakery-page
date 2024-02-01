@@ -11,7 +11,7 @@ const sub_dir_content = [
 
 const get_element_y = (target_element: HTMLElement) => {
   const e_rect: DOMRect = target_element.getBoundingClientRect();
-  const e_pos: number = (window.scrollY + e_rect.top) - 100;
+  const e_pos: number = (window.scrollY + e_rect.top) - 25;
   return e_pos;
 }
 

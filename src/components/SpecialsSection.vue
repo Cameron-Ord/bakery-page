@@ -35,6 +35,7 @@ const specials = [
     display: grid;
     align-items: center;
     row-gap: 25px;
+    text-align: center;
     justify-items: center;   
     width: 80%;
      >.special_title{

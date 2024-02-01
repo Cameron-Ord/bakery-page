@@ -18,20 +18,47 @@ const is_displaying = ref(false);
 let selection_data: Array<{ title: string, content: string }> | undefined;
 let saved_e_pos: number | undefined;
 
+const before_enter = (el: Element) =>{
+  if(el instanceof HTMLElement){
+    el.style.opacity = '0';
+  }
+}
+
+const enter = async (el: Element, done: any) =>{
+  if(el instanceof HTMLElement){
+    await nextTick();
+    el.style.transition = 'opacity 0.5s';
+    el.style.opacity = '1';
+    done();
+  }
+}
+
+const before_leave = (el: Element) => {
+  if(el instanceof HTMLElement){
+    console.log("Before leave")
+    el.style.opacity = '1';
+  }
+}
+
+const leave = async (el: Element, done: any) =>{
+  if(el instanceof HTMLElement){
+    await nextTick()
+    el.style.transition = 'opacity 0.5s';
+    el.style.opacity = '0';
+    done();
+  }
+
+}
 const assign_selection = (text: string) =>{
   selection.value = "";
   selection.value += text;
 }
 
 const display_about_selection = (choice_data: Array<{ title: string, content: string }>, element_y: number | undefined) =>{
-  const remove: HTMLElement | null = document.querySelector('.about_teaser')
-  if(remove){
-    remove.style['gridTemplateColumns'] = 'none';
-  }
   
   if(choice_data.length > 0 && choice_data !== undefined) {
-    is_displaying.value = true;
     selection_data = choice_data;
+    is_displaying.value = true;
   }
   
   if(element_y !== undefined){
@@ -45,18 +72,9 @@ const return_data = () =>{
   }
 }
 
-const reset_grid=async()=>{
-  await nextTick();
-  const remove: HTMLElement | null = document.querySelector('.about_teaser')
-  if(remove){
-    remove.style['gridTemplateColumns'] = '';
-  }
-}
-
 const reset_about_selection = async () =>{
-  selection_data = undefined;
   is_displaying.value = false;
-  reset_grid()
+  selection_data = undefined;
   if(saved_e_pos !== undefined){
     await nextTick();
     window.scrollTo({
@@ -77,13 +95,11 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-
-.v-enter-active {
-  transition: opacity 0.8s ease;
+.transition_handler-enter-active, .transition_handler-leave-active {
+  transition: opacity 0.5s;
 }
 
-
-.v-enter-from{
+.transition_handler-enter, .transition_handler-leave-to {
   opacity: 0;
 }
 .page_main{
@@ -176,6 +192,7 @@ onMounted(() => {
 
 </style>
 
+
 <template>
   <main class="page_main">
     <section class="hero_section">
@@ -194,32 +211,75 @@ onMounted(() => {
       </transition>
     </section>
     <section class="about_teaser">
-      <transition>
+      <transition 
+        name="transition_handler"
+        :css="false"
+        @before-enter="before_enter"
+        @enter="enter"
+        @before-leave="before_leave"
+        @leave="leave"
+      >
+        
         <about-history 
         v-if="!is_displaying" 
         :display_about_selection="display_about_selection"
+        key="history"
         ></about-history>
+      
       </transition>
-      <transition>
+      
+      <transition 
+        name="transition_handler"
+        :css="false"
+        @before-enter="before_enter"
+        @enter="enter"
+        @before-leave="before_leave"
+        @leave="leave"
+      >
+
         <about-ingredients 
         v-if="!is_displaying" 
         :display_about_selection="display_about_selection"
+        key="ingredients"
         ></about-ingredients>
+     
       </transition>
-      <transition>
+      
+      <transition
+        name="transition_handler"
+        :css="false"
+        @before-enter="before_enter"
+        @enter="enter"
+        @before-leave="before_leave"
+        @leave="leave"
+      >
+
         <about-philosophy 
         v-if="!is_displaying" 
         :display_about_selection="display_about_selection"
-        ></about-philosophy>      
+        key="philosophy"
+        ></about-philosophy>
+      
       </transition>
-      <transition>
+      
+      <transition 
+        name="transition_handler"
+        :css="false"
+        @before-enter="before_enter"
+        @enter="enter"
+        @before-leave="before_leave"
+        @leave="leave"
+      >
+
         <about-display 
         v-if="is_displaying" 
         @clicked="handle_emit"
         :return_data="return_data" 
         :reset_about_selection="reset_about_selection"
-        ></about-display>      
-      </transition>
+        key="display"
+        ></about-display>  
+
+      </transition>    
     </section>
     <section class="sub_hero_images">
       <sub-images></sub-images>

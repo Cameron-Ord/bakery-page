@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { nextTick, onBeforeMount, onMounted } from 'vue';
+import { nextTick, onBeforeMount, onMounted, onBeforeUnmount } from 'vue';
 const {return_data, reset_about_selection} = defineProps(['return_data', 'reset_about_selection'])
-const emit = defineEmits(['clicked'])
 let data: Array<{title: string, content:string}>;
 
 const go_back = () => {
-    emit('clicked');
     reset_about_selection();
 }
 
@@ -19,14 +17,21 @@ const scroll_to_element = async (e_pos: number) =>{
         top: e_pos,
         behavior: 'instant',
     });
-
 }
+
+onBeforeUnmount(() => {
+    const remove: HTMLElement | null = document.querySelector('.about_teaser')
+    if(remove){
+        remove.style['gridTemplateColumns'] = '';
+    }
+})
 
 onMounted(() => {
     const title_nl: Element | null = document.querySelector('.about_teaser');
     if(title_nl instanceof HTMLElement){
+        title_nl.style['gridTemplateColumns'] = 'none';
         const element_rect: DOMRect = title_nl.getBoundingClientRect();
-        const element_y: number = (window.scrollY + element_rect.top) - 100;
+        const element_y: number = (window.scrollY + element_rect.top) - 25;
         scroll_to_element(element_y);
     }
 })
