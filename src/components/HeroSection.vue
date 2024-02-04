@@ -55,6 +55,7 @@
   justify-content: flex-start;
   row-gap: 25px;
   width: 70%;
+  max-width: 200px;
 }
 
 .hero_intro_span{
@@ -79,6 +80,7 @@
     width: auto;
     row-gap: 35px;
     margin-left: 50px;
+    max-width: 300px;
   }
   .hero_h1{
     font-size: clamp(2rem, 2vw, 3rem);
@@ -115,7 +117,7 @@
   }
 
   .hero_article{
-    width: auto;
+    max-width: none;
     row-gap: 35px;
     margin-left: 100px;
   }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {onBeforeMount} from 'vue'
+const set_img = "/images/1_768x1152.jpg";
 const { display_about_selection } = defineProps(['display_about_selection'])
 const sub_dir_content: Array<{ title: string, content: string }> = [
   { "title": "The Early Days", "content": "In the heart of Edmonton, our founders, John and Cameron, embarked on a mission to bring artisanal delights to the neighborhood. Armed with family recipes and a passion for perfection, they kneaded, mixed, and baked their way into the hearts of locals." },
@@ -59,6 +60,7 @@ onBeforeMount(()=>{
 
 })
 
+
 </script>
 <style lang="scss" scoped>
 
@@ -103,7 +105,7 @@ onBeforeMount(()=>{
 <template>
   <article class="about_history">
     <span class="text_span">
-      <img src="/images/about1.jpg" alt="" image_attr class="about_image">
+      <img :src="set_img" alt="" image_attr class="about_image">
       <h2 class="history_header">Our History</h2>
       <h3 @click="send_choice_data($event.target)">View</h3>
     </span>

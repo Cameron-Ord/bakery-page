@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const contact_image = "/images/18_962x962.jpg"
+</script>
 <style lang="scss" scoped>
 
 .contact_article{
@@ -14,7 +16,7 @@
     justify-content: center;
     width: 80%;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 20px;
 
     >.input_tag{
         height: 25px;
@@ -42,6 +44,9 @@
 @media only screen and (min-width: 770px) {
     .contact_article{
         grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    }
+    .interval_image{
+        max-width: 350px;
     }
     .contact_span{
         justify-content: center;
@@ -72,12 +77,13 @@
 <template>
   <article class="contact_article">
     <span class="contact_img_span">
-        <img src="/images/example3.jpg" alt="contact image" class="interval_image">
+        <img :src="contact_image" alt="contact image" class="interval_image">
     </span>
     <span class="contact_span">
         <h1>Contact Us</h1>
         <input class="input_tag" type="text" placeholder="your name..">
         <textarea class="text_area" name="message"></textarea>
+        <p class="submit_tag">Submit</p>
     </span>
   </article>
 </template>

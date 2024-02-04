@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue';
+
+const socials_image = "/images/17_912x912.jpg"
+
+</script>
 <style lang="scss" scoped>
 
 .media_article{
@@ -48,7 +53,9 @@
         align-items: center;
 
     }
-
+    .interval_image{
+        max-width: 350px;
+    }
     .media_image_span{
         justify-content: center;
     }
@@ -78,7 +85,7 @@
             </div>
         </span>
         <span class="media_image_span">
-            <img src="/images/example2.jpg" alt="" class="interval_image">
+            <img :src="socials_image" alt="" class="interval_image">
         </span>
     </article>
 </template>

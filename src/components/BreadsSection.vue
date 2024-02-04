@@ -1,26 +1,62 @@
 <script setup lang="ts">
+import { nextTick, onMounted } from 'vue';
+
 const breads = [
   {
     "Title": "Sourdough",
     "Desc": "Savor the tangy perfection of our artisanal Sourdough Delight. Crafted through natural fermentation, bread offers a crispy crust and chewy texture. Versatile and flavorful, it's perfect with butter or paired with artisanal cheeses.",
-    "Img": "/images/sourdough.jpg"
+    "Img": "/images/30_1120x746.jpg"
   },
   {
     "Title": "White bread",
     "Desc": "Indulge in simplicity with our White Bread. Soft, fluffy, and versatile. Perfect for toasting or crafting your favorite sandwiches. Embrace the classic goodness with every bite.",
-    "Img": "/images/white.jpg"
+    "Img": "/images/32_1000x666.jpg"
   },
   {
     "Title": "Whole grain bread",
     "Desc": "Savor the wholesome goodness of our Nutty Whole Grain Bread. Packed with fiber and nutrients, it's a hearty choice for a nutritious start or a satisfying sandwich foundation.",
-    "Img": "/images/wholewheat.jpg"
+    "Img": "/images/33_940x626.jpg"
   },
   {
     "Title": "Rye bread",
     "Desc": "Indulge in the rich amalgamation of wholesome grains found in our Rye Bread. Its nutty, tangy profile adds to its versatility, making it an ideal canvas for various spreads or a distinctive choice for your sandwich creation.",
-    "Img": "/images/sesame.jpg"
+    "Img": "/images/29_936x624.jpg"
   }
 ]
+
+const await_next_tick = async () =>{
+  await nextTick();
+}
+
+onMounted(()=>{
+  await_next_tick();
+  let img_nodelist:NodeList | null = document.querySelectorAll('.bread_image');
+  let span_nodelist: NodeList | null = document.querySelectorAll('.bread_item');
+
+  if(span_nodelist){
+    for(let s = 0; s < span_nodelist.length; ++s){
+      let span_node: Node = span_nodelist[s];
+      if(span_node instanceof HTMLElement && window.innerWidth >= 1024){
+        span_node.style.maxWidth = "75%"
+      }
+    }
+  }
+
+  if(img_nodelist){
+    for(let i = 0; i < img_nodelist.length; ++i){
+      let img_node: Node = img_nodelist[i];
+      if(img_node instanceof HTMLImageElement){
+        img_node.style.opacity = '0';
+        img_node.onload = () => {
+          if(img_node.complete){
+            img_node.style.transition = '0.3s ease-in-out'
+            img_node.style.opacity = '1';
+          }
+        }
+      }
+    }
+  }
+})
 
 </script>
 <style lang="scss" scoped>
@@ -68,10 +104,10 @@ const breads = [
 }
 @media only screen and (min-width: 1024px){
   .breads_article{
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
   .bread_item{
-    grid-template-rows: 75px 1fr 1fr;
+    grid-template-rows: 75px 1fr 1.25fr;
   }
 }
 </style>

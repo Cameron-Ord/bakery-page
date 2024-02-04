@@ -112,7 +112,10 @@ body{
 }
 .bread_desc{
     width: 90%;
-    padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     color: var(--gunmetal);
 }
 .bread_item{
@@ -127,7 +130,10 @@ body{
 }
 .pastries_desc{
     width: 90%;
-    padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     color: var(--gunmetal);
 }
 .pastries_item{
@@ -143,7 +149,10 @@ body{
 }
 .special_desc{
     width: 90%;
-    padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     color: var(--gunmetal);
 }
 .special_item{
@@ -208,7 +217,16 @@ body{
     color: var(--blush);
 }
 
-
+.submit_tag{
+    color: var(--white);
+    background-color: var(--blush);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 10px;
+}
 .locations_section{
     background-color: var(--night);
 }
