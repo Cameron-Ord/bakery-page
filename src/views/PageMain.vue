@@ -30,7 +30,7 @@ const on_enter_text = async (el:Element, done: any) => {
     let children: NodeListOf<ChildNode> = el.childNodes;
     if(children){
       for(let c = 0; c < children.length; c++){
-        let child: ChildNode = children[c];
+        let child = children[c] as HTMLElement;
         if(child instanceof HTMLElement){
           child.style.opacity = '0';
         }
@@ -49,7 +49,7 @@ const after_enter_text = async (el:Element) =>{
     if(children){
       let timeout_offset: number = 0;
       for(let c = 0; c < children.length; c++){
-        let child: ChildNode = children[c];
+        let child = children[c] as HTMLElement;
         if(child instanceof HTMLElement){
           setTimeout(()=>{
             child.style.transition = '0.3s ease-in-out';
@@ -72,13 +72,15 @@ const enter = async (el: Element, done: any) =>{
         let child_children: NodeListOf<ChildNode> = child.childNodes;
         if(child_children){
           for(let cc = 0; cc < child_children.length; cc++){
-            let c_child: ChildNode = child_children[cc];
+            let c_child = child_children[cc] as HTMLElement;
             if(c_child instanceof HTMLImageElement){
-              c_child.style.opacity = '0';
-              c_child.onload = () =>{
-                if(c_child.complete){
-                  c_child.style.transition = '0.3s ease-in-out';
-                  c_child.style.opacity = '1';
+              //TS can be stupid
+              let img_element: HTMLImageElement = c_child;
+              img_element.style.opacity = '0';
+              img_element.onload = () =>{
+                if(img_element.complete){
+                  img_element.style.transition = '0.3s ease-in-out';
+                  img_element.style.opacity = '1';
                 }
               }
             }
@@ -176,7 +178,7 @@ const set_about_images = () => {
     let img_tag_nl: NodeList | null = document.querySelectorAll('.about_image');
     if(img_tag_nl){
       for(let n = 0; n < img_tag_nl.length; n++){
-        let img_node: Node = img_tag_nl[n];
+        let img_node = img_tag_nl[n] as HTMLImageElement;
         if(img_node instanceof HTMLImageElement){
           img_node.style.opacity = '0';
           img_node.onload=()=>{
@@ -197,7 +199,7 @@ const set_other_images = () => {
   let cs_img_nodelist: NodeList | null = document.querySelectorAll('.interval_image');
   if(cs_img_nodelist){
     for(let n = 0; n < cs_img_nodelist.length; n++){
-      let img_node: Node = cs_img_nodelist[n];
+      let img_node = cs_img_nodelist[n] as HTMLImageElement;
       if(img_node instanceof HTMLImageElement){
         img_node.style.opacity = '0';
         img_node.onload = () =>{

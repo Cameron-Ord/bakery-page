@@ -34,7 +34,7 @@ onMounted(()=>{
 
   if(span_nodelist){
     for(let s = 0; s < span_nodelist.length; ++s){
-      let span_node: Node = span_nodelist[s];
+      let span_node = span_nodelist[s] as HTMLElement;
       if(span_node instanceof HTMLElement && window.innerWidth >= 1024){
         span_node.style.maxWidth = "75%"
       }
@@ -43,7 +43,7 @@ onMounted(()=>{
 
   if(img_nodelist){
     for(let i = 0; i < img_nodelist.length; ++i){
-      let img_node: Node = img_nodelist[i];
+      let img_node = img_nodelist[i] as HTMLImageElement;
       if(img_node instanceof HTMLImageElement){
         img_node.style.opacity = '0';
         img_node.onload = () => {
